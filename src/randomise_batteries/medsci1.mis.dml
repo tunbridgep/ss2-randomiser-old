@@ -2,6 +2,8 @@
 // First Battery Near Airlock Door - 1767
 // ================================================================================
 
++MetaProp 1767 "Randomiser Scripts"
+
 ////Near the wrench under collapsed wall
 Create "SargeRandomiserPosition"
 {
@@ -12,6 +14,6 @@ Create "SargeRandomiserPosition"
 		"Pitch" c000
 		"Bank" 4000
 	}
-	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1767; sargeRandomiseChance=50;"
+	//+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1767; sargeRandomiseChance=50;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1767;"
 }

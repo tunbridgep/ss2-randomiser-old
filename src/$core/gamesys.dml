@@ -1,21 +1,44 @@
 DML1
 
+CreateArch "Misc Metaprops" "Randomiser Scripts"
+{
+	+ObjProp "Scripts"
+	{
+		"Script 0" "sargeRandomisedObject"
+		"Don't inherit" false
+	}
+}
+
+CreateArch "Misc Metaprops" "Randomiser - Remover"
+{
+	+ObjProp "Scripts"
+	{
+		"Script 0" "sargeRandomRemoveObject"
+		"Don't inherit" false
+	}
+}
+
+//Moves the associated item to the specified position in the world
 CreateArch "Marker" "SargeRandomiserPosition"
 {
 	+ObjProp "Scripts"
 	{
 		"Script 0" "sargeRandomisePosition"
-		"Script 1" "NVSpy"
+		//"Script 1" "NVSpy"
+		//"Script 2" "NVLinkBuilder"
 		"Don't inherit" false
 	}
 }
 
+//Moves the associated item to the specified container
 CreateArch "Marker" "SargeRandomiserContainer"
 {
 	+ObjProp "Scripts"
 	{
 		"Script 0" "sargeRandomiseContainer"
-		"Script 1" "NVSpy"
+		//"Script 0" "sargeRandomiserBase"
+		//"Script 1" "NVSpy"
+		//"Script 2" "NVLinkBuilder"
 		"Don't inherit" false
 	}
 }
