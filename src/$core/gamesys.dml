@@ -4,8 +4,18 @@ CreateArch "Marker" "SargeRandomiserPosition"
 {
 	+ObjProp "Scripts"
 	{
-		"Script 0" "sargeRandomiser"
-		//"Script 1" "NVSpy"
+		"Script 0" "sargeRandomisePosition"
+		"Script 1" "NVSpy"
+		"Don't inherit" false
+	}
+}
+
+CreateArch "Marker" "SargeRandomiserContainer"
+{
+	+ObjProp "Scripts"
+	{
+		"Script 0" "sargeRandomiseContainer"
+		"Script 1" "NVSpy"
 		"Don't inherit" false
 	}
 }

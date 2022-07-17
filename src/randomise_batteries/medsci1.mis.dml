@@ -1,0 +1,17 @@
+// ================================================================================
+// First Battery Near Airlock Door - 1767
+// ================================================================================
+
+////Near the wrench under collapsed wall
+Create "SargeRandomiserPosition"
+{
+	+ObjProp "Position"
+	{
+		"Location" "53.0908, -74.1022, -19.6579"
+		"Heading" a107
+		"Pitch" c000
+		"Bank" 4000
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1767; sargeRandomiseChance=50;"
+}

@@ -1,10 +1,28 @@
 // ================================================================================
-// Science Sector Keycard
+// Cryo A Keycard - 1050
+// ================================================================================
+
+////On the table
+Create "SargeRandomiserPosition"
+{
+	+ObjProp "Position"
+	{
+		"Location" "59.0644, -6.80372, -0.368284"
+		"Heading" d44
+		"Pitch" 0
+		"Bank" 0
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1050; sargeRandomiseChance=50; sargeDisablePhysics=true;"
+}
+
+// ================================================================================
+// Science Sector Keycard - 338
 // ================================================================================
 
 //Add Markers for possible card locations
 
-////Opposite Room Location
+////Opposite Room Location, near the other Cryo chambers
 Create "SargeRandomiserPosition"
 {
 	+ObjProp "Position"
@@ -15,7 +33,7 @@ Create "SargeRandomiserPosition"
 		"Bank" 0
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=338; sargeRandomiseChance=33;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=338; sargeRandomiseChance=25;"
 }
 
 ////Near the locked door to Science Sector (with the ghost)
@@ -29,5 +47,19 @@ Create "SargeRandomiserPosition"
 		"Bank" 0
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=338; sargeRandomiseChance=33;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=338; sargeRandomiseChance=25;"
+}
+
+////In the container on the lower level
+Create "SargeRandomiserContainer"
+{
+	+ObjProp "Position"
+	{
+		"Location" "63.2875, -166.773, -18.0008"
+		"Heading" 1828
+		"Pitch" 0
+		"Bank" 0
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=338; sargeRandomiseChance=25; sargeContainer=105"
 }
