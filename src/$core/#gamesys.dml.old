@@ -1,0 +1,61 @@
+DML1
+
+//Handle randomisation via scripts attached to a metaprop, to not
+//upset any objects that currently have scripts applied
+//CreateArch "Misc Metaprops" "SargeRandomiser"
+//+ObjProp "SargeRandomiser" "Scripts"
+//{
+//	"Script 0" "sargeRandomiser"
+//	"Script 1" ""
+//	"Script 2" ""
+//	"Script 3" ""
+//	"Don't inherit" false
+//}
+
+CreateArch "Marker" "SargeRandomiserPosition"
+{
+	+ObjProp "Scripts"
+	{
+		"Script 0" "sargeRandomiser"
+		"Script 1" "NVSpy"
+		"Don't inherit" false
+	}
+}
+
+/*
+CreateArch "Misc Metaprops" "Sarge Keycard Physics"
+{
+	+ObjProp "PhysType"
+	{
+		"Type" "Sphere"
+		"# Submodels" 1
+		"Remove on Sleep" FALSE
+		"Special" FALSE
+	}
+	
+	+ObjProp "PhysAttr"
+	{
+	"Gravity %" 100.00
+	"Mass" 30.00
+	"Density" 1.00
+	"Elasticity" 1.00
+	"Base Friction" 0.00
+	"COG Offset" 0.00, 0.00, 0.00
+	"Climbable Sides" "[None]"
+	"Flags" "[None]"
+	"Rotation Axes" "X Axis, Y Axis, Z Axis"
+	"Rest Axes" "+X Axis, -X Axis"
+	}
+	
+	+ObjProp "PhysDims"
+	{
+		"Size" 0.00, 0.00, 0.00
+		"Radius 1" 0.26
+		"Radius 2" 0.00
+		"Offset 1" 0.00, 0.00, 0.00
+		"Offset 2" 0.00, 0.00, 0.00
+		"Point vs Terrain" FALSE
+		"Point vs Not Special" FALSE
+	}
+}
+*/

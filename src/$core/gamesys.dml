@@ -1,0 +1,11 @@
+DML1
+
+CreateArch "Marker" "SargeRandomiserPosition"
+{
+	+ObjProp "Scripts"
+	{
+		"Script 0" "sargeRandomiser"
+		//"Script 1" "NVSpy"
+		"Don't inherit" false
+	}
+}

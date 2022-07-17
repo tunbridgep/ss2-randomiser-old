@@ -1,0 +1,33 @@
+// ================================================================================
+// Science Sector Keycard
+// ================================================================================
+
+//Add Markers for possible card locations
+
+////Opposite Room Location
+Create "SargeRandomiserPosition"
+{
+	+ObjProp "Position"
+	{
+		"Location" "29.2672, -107.361, -4.0"
+		"Heading" 1c71
+		"Pitch" 0
+		"Bank" 0
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=338; sargeRandomiseChance=33;"
+}
+
+////Near the locked door to Science Sector (with the ghost)
+Create "SargeRandomiserPosition"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-0.130801, -138.884, -3.9437"
+		"Heading" 1000
+		"Pitch" 0
+		"Bank" 0
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=338; sargeRandomiseChance=33;"
+}
