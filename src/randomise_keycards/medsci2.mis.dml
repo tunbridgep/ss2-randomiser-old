@@ -1,7 +1,39 @@
 // ================================================================================
 // Crew Section Keycard - 1904
+// Move corpse 105 (Grassi) rather than keycard for realism/immersion
 // ================================================================================
 
++MetaProp 105 "Object Randomiser"
+
+////Near the turret outside the biopsy lab
+Create "sargeRandomiserOutputPosition"
+{
+	+ObjProp "Position"
+	{
+		"Location" "70.1835, -281.712, -3.69558"
+		"Heading" f5a4
+		"Pitch" fe80
+		"Bank" fe00
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=105;"
+}
+
+////In the radiation room near the Biopsy lab
+Create "sargeRandomiserOutputPosition"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-26.7165, -268.813, -3.79594"
+		"Heading" ef6c
+		"Pitch" fd28
+		"Bank" fe80
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=105;"
+}
+
+/*
 +MetaProp 1904 "Object Randomiser"
 
 ////Near the turret outside the biopsy lab
@@ -17,3 +49,14 @@ Create "sargeRandomiserOutputPosition"
 	
 	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1904; sargeDisablePhysics=true;"
 }
+*/
+
+// ================================================================================
+// R&D Keycard - 772
+// Maybe remove this as Polito tells you to find it in this room, although she does say MAYBE he has a backup R&D Card, so there's that.
+// It doesn't make a lot of sense that it would go missing, though.
+// ================================================================================
+
+/*
++MetaProp 772 "Object Randomiser"
+*/

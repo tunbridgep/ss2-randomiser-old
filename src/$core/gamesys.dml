@@ -46,3 +46,18 @@ CreateArch "Marker" "sargeRandomiserOutputSwap"
 		"Don't inherit" false
 	}
 }
+
+/*
+//Creates a new object at the location of the output
+CreateArch "Marker" "sargeRandomItemCreator"
+{
+	+ObjProp "Scripts"
+	{
+		"Script 0" "sargeRandomItemCreator"
+		//"Script 0" "sargeRandomiserBase"
+		//"Script 1" "NVSpy"
+		//"Script 2" "NVLinkBuilder"
+		"Don't inherit" false
+	}
+}
+*/

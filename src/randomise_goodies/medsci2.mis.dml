@@ -1,0 +1,77 @@
+// ================================================================================
+// BrawnBoost in the Restroom in Crew Quarters - 1133
+// ================================================================================
+
++MetaProp 1133 "Object Randomiser"
+
+////Move to desk in crew quarters room 2 doors to the left of restroom
+Create "sargeRandomiserOutputContainer"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-141.634, -3.91494, -14.224"
+		"Heading" 4000
+		"Pitch" 0
+		"Bank" 0
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1133; sargeContainer=418"
+}
+
+/*
+////Move to desk in crew quarters upstairs room
+Create "sargeRandomiserOutputContainer"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-86.5006, 30.9488, -2.11859"
+		"Heading" 83fc
+		"Pitch" 0
+		"Bank" 0
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1133; sargeContainer=1658"
+}
+*/
+
+////Move to corpse outside crew quarters upstairs room
+Create "sargeRandomiserOutputContainer"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-108.823, 41.0948, -2.76304"
+		"Heading" 4000
+		"Pitch" 0
+		"Bank" 0
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1133; sargeContainer=1429"
+}
+
+////Move to triop crate inside cafeteria in crew quarters
+Create "sargeRandomiserOutputContainer"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-69.7395, -18.8865, 1.19396e-006"
+		"Heading" 0
+		"Pitch" 0
+		"Bank" 0
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1133; sargeContainer=776"
+}
+
+////Move near dead guy in ceiling area near Watts office
+Create "sargeRandomiserOutputPosition"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-129.126, 119.084, -3.31389"
+		"Heading" b6c
+		"Pitch" c000
+		"Bank" 8a44
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1133"
+}

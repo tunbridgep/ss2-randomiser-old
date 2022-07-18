@@ -1,0 +1,19 @@
+// ================================================================================
+// Worm Goo in the Restroom in Crew Quarters - 326
+// ================================================================================
+
++MetaProp 326 "Object Randomiser"
+
+////Move to main walkway near restroom
+Create "sargeRandomiserOutputPosition"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-109.18, 56.9931, -3.90484"
+		"Heading" be6
+		"Pitch" 0
+		"Bank" 0
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=326"
+}

@@ -24,8 +24,10 @@ class sargeRandomiserOutput extends sargeBase
 		//If item is contained, we need to clone it and delete the old one
 		if (Link.AnyExist(linkkind("~Contains"),item))
 		{
+			local item2 = Object.Create(item);
 			Object.Destroy(item);
-			item = Object.Create(item);
+			item = item2;
+			
 		}
 		//foreach (outLink in Link.GetAll(linkkind("~Contains"),item))
 			//Link.Destroy(outLink);
@@ -39,9 +41,9 @@ class sargeRandomiserOutput extends sargeBase
 	}
 	
 	function OnOutputSelected()
-	{	
+	{
 		RemoveContainsLinks();
-		
+	
 		if (getParam("sargeDisablePhysics",FALSE))
 			DisablePhysics();
 		//print ("OnOutputSelected called!");
