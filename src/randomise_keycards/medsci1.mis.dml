@@ -2,10 +2,10 @@
 // Cryo A Keycard - 1050
 // ================================================================================
 
-+MetaProp 1050 "Randomiser Scripts"
++MetaProp 1050 "Object Randomiser"
 
 ////On the table
-Create "SargeRandomiserPosition"
+Create "sargeRandomiserOutputPosition"
 {
 	+ObjProp "Position"
 	{
@@ -22,10 +22,10 @@ Create "SargeRandomiserPosition"
 // Science Sector Keycard - 338
 // ================================================================================
 
-+MetaProp 338 "Randomiser Scripts"
++MetaProp 338 "Object Randomiser"
 
 ////Opposite Room Location, near the other Cryo chambers
-Create "SargeRandomiserPosition"
+Create "sargeRandomiserOutputPosition"
 {
 	+ObjProp "Position"
 	{
@@ -39,7 +39,7 @@ Create "SargeRandomiserPosition"
 }
 
 ////Near the locked door to Science Sector (with the ghost)
-Create "SargeRandomiserPosition"
+Create "sargeRandomiserOutputPosition"
 {
 	+ObjProp "Position"
 	{
@@ -53,7 +53,7 @@ Create "SargeRandomiserPosition"
 }
 
 ////In the container on the lower level
-Create "SargeRandomiserContainer"
+Create "sargeRandomiserOutputContainer"
 {
 	+ObjProp "Position"
 	{

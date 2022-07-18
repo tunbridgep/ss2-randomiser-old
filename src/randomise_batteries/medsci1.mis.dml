@@ -2,10 +2,10 @@
 // First Battery Near Airlock Door - 1767
 // ================================================================================
 
-+MetaProp 1767 "Randomiser Scripts"
++MetaProp 1767 "Object Randomiser"
 
 ////Near the wrench under collapsed wall
-Create "SargeRandomiserPosition"
+Create "sargeRandomiserOutputPosition"
 {
 	+ObjProp "Position"
 	{

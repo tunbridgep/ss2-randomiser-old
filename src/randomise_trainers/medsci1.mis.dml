@@ -2,7 +2,7 @@
 // First Four Skill Trainers - 1352 (stats), 1355 (psi), 1354 (weapons), 1317 (tech)
 // ================================================================================
 
-+MetaProp 1352 "Randomiser - Remover"
-+MetaProp 1355 "Randomiser - Remover"
-+MetaProp 1354 "Randomiser - Remover"
-+MetaProp 1317 "Randomiser - Remover"
+//+MetaProp 1352 "Randomiser - Remover"
+//+MetaProp 1355 "Randomiser - Remover"
+//+MetaProp 1354 "Randomiser - Remover"
+//+MetaProp 1317 "Randomiser - Remover"
