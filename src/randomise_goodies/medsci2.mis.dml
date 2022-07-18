@@ -15,7 +15,7 @@ Create "sargeRandomiserOutput"
 		"Bank" 0
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1133; sargeContainer=418"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=1133; sargeContainer=418"
 }
 
 /*
@@ -30,7 +30,7 @@ Create "sargeRandomiserOutput"
 		"Bank" 0
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1133; sargeContainer=1658"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=1133; sargeContainer=1658"
 }
 */
 
@@ -45,7 +45,7 @@ Create "sargeRandomiserOutput"
 		"Bank" 0
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1133; sargeContainer=1429"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=1133; sargeContainer=1429"
 }
 
 ////Move to triop crate inside cafeteria in crew quarters
@@ -59,7 +59,7 @@ Create "sargeRandomiserOutput"
 		"Bank" 0
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1133; sargeContainer=776"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=1133; sargeContainer=776"
 }
 
 ////Move near dead guy in ceiling area near Watts office
@@ -73,7 +73,7 @@ Create "sargeRandomiserOutput"
 		"Bank" 8a44
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1133"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=1133"
 }
 
 ////Move into weird back room in first room in Crew Quarters
@@ -87,7 +87,7 @@ Create "sargeRandomiserOutput"
 		"Bank" 0
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1133"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=1133"
 }
 
 // ================================================================================
@@ -107,7 +107,7 @@ Create "sargeRandomiserOutput"
 		"Bank" 0
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1431; sargeDisablePhysics=true;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=1431; sargeDisablePhysics=true;"
 }
 
 ////Move to monitors near Armoury
@@ -121,7 +121,7 @@ Create "sargeRandomiserOutput"
 		"Bank" 3a88
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1431; sargeDisablePhysics=true;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=1431; sargeDisablePhysics=true;"
 }
 
 ////Move to broken door quarters in crew quarters
@@ -135,5 +135,5 @@ Create "sargeRandomiserOutput"
 		"Bank" 0
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1431;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=1431;"
 }

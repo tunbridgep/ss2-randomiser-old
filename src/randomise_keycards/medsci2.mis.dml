@@ -16,7 +16,7 @@ Create "sargeRandomiserOutput"
 		"Bank" fe00
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=105;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=105;"
 }
 
 ////In the radiation room near the Biopsy lab
@@ -30,7 +30,7 @@ Create "sargeRandomiserOutput"
 		"Bank" fe80
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=105;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=105;"
 }
 
 /*
@@ -47,7 +47,7 @@ Create "sargeRandomiserOutput"
 		"Bank" c474
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1904; sargeDisablePhysics=true;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=1904; sargeDisablePhysics=true;"
 }
 */
 
@@ -70,7 +70,7 @@ Create "sargeRandomiserOutput"
 		"Bank" 0
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=772; sargeDisablePhysics=true;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=772; sargeDisablePhysics=true;"
 }
 
 ////On Dr Watts Desk shelf
@@ -84,5 +84,5 @@ Create "sargeRandomiserOutput"
 		"Bank" 0
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=772;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=772;"
 }

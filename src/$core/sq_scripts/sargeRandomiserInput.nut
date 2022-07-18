@@ -1,11 +1,14 @@
 // ================================================================================
-// Script used by objects to roll a random randomiser
-class sargeRandomisedObject extends sargeBase
+// Can be used to set a number of inputs for objects which will be randomised
+// Also handled rolling and other stuff
+// Actually handles the "choosing an item" aspect
+// And then tells a specific output to act.
+class sargeRandomiserInput extends sargeBase
 {
 	function Init()
 	{
 		//We need to delay a bit to give our link generation some time to kick in
-		SetOneShotTimer("RandomiseTimer", 0.1);
+		SetOneShotTimer("RandomiseTimer", 0.2);
 	}
 	
 	function Roll(links)
@@ -21,7 +24,7 @@ class sargeRandomisedObject extends sargeBase
 		else
 		{
 			print ("Rolled a " + roll + "/" + max + " - " + object_name + " (" + self + ") sent to output " + (roll-1) + ".");
-			SendMessage(links[roll-1].dest, "OutputSelected");
+			SendMessage(links[roll-1].dest, "OutputSelected",self);
 		}	
 	
 		//LinkTools.LinkSetData
