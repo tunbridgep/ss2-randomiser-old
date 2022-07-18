@@ -21,8 +21,14 @@ class sargeRandomiserOutput extends sargeBase
 	//Remove any contains links, so that items can actually exist in the world
 	function RemoveContainsLinks()
 	{
-		foreach (outLink in Link.GetAll(linkkind("~Contains"),item))
-			Link.Destroy(outLink);
+		//If item is contained, we need to clone it and delete the old one
+		if (Link.AnyExist(linkkind("~Contains"),item))
+		{
+			Object.Destroy(item);
+			item = Object.Create(item);
+		}
+		//foreach (outLink in Link.GetAll(linkkind("~Contains"),item))
+			//Link.Destroy(outLink);
 	}
 	
 	//Override this
@@ -47,14 +53,14 @@ class sargeRandomiserOutputPosition extends sargeRandomiserOutput
 		
 		print ("moving item " + item + " to position " + Object.Position(self));
 		
-		Object.Teleport(item, Object.Position(self), Object.Facing(self));
-		
 		if (disablePhysics)
 		{
 			print ("disabling physics for " + item);
 			Physics.SetGravity(item,0.0);
 			Physics.SetVelocity(item,vector(0,0,0));
 		}
+		
+		Object.Teleport(item, Object.Position(self), Object.Facing(self));
 	}
 }
 
