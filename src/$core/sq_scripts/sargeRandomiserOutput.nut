@@ -2,19 +2,16 @@
 // Base class for randomisers
 class sargeRandomiserOutput extends sargeBase
 {
-	input = null;
-	current_rolls = 0;
-
 	function Init()
 	{
-		input = getParam("sargeRandomiserInput",0);
-		if (input)
-		{
-			local link = Link.Create(linkkind("Target"), self, input);
-		}
+		local inputs = getParamArray("sargeRandomiserInput");
+	
+		if (inputs.len() == 0)
+			print ("sargeRandomiserInput[] not set - output " + self + " has no inputs and will not function!");
 		else
 		{
-			print ("sargeRandomiserInput not set - output " + self + " will not function!");
+			foreach(input in inputs)
+				Link.Create(linkkind("Target"), self, input);
 		}
 	}
 	
@@ -90,14 +87,7 @@ class sargeRandomiserOutput extends sargeBase
 	
 		if (getParam("sargeDisablePhysics",FALSE))
 			DisablePhysics(item);
-			
-			
-		current_rolls++;
-		if (current_rolls >= maxRolls)
-		{
-			print ("Output " + self + " has reached max rolls (" + maxRolls + "), deleting...");
-			Object.Destroy(self);
-		}
+		
 		//print ("OnOutputSelected called!");
 	}
 }

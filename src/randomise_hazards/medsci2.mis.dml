@@ -15,5 +15,5 @@ Create "sargeRandomiserOutput"
 		"Bank" 0
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=326"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=326"
 }

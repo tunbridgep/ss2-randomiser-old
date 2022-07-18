@@ -1,5 +1,8 @@
 DML1
 
+//Attach this to an item and then link outputs to it for a quick, easy randomiser.
+//Alternatively, slap this on a marker and specify multiple objects with sargeInputItem0=, sargeInputItem1= etc.
+//Then you can make multiple input items use multiple outputs.
 CreateArch "Misc Metaprops" "Object Randomiser"
 {
 	+ObjProp "Scripts"
@@ -8,6 +11,18 @@ CreateArch "Misc Metaprops" "Object Randomiser"
 		"Don't inherit" false
 	}
 }
+
+/*
+//Input for the randomiser system
+CreateArch "Marker" "sargeRandomiserInput"
+{
+	+ObjProp "Scripts"
+	{
+		"Script 0" "sargeRandomiserInput"
+		"Don't inherit" false
+	}
+}
+*/
 
 //Output for the randomiser system
 CreateArch "Marker" "sargeRandomiserOutput"

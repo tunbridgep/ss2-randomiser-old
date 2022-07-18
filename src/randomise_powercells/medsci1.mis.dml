@@ -14,8 +14,8 @@ Create "sargeRandomiserOutput"
 		"Pitch" c000
 		"Bank" 4000
 	}
-	//+ObjProp "DesignNoteSS" = "sargeRandomiserInput=1767; sargeRandomiseChance=50;"
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=1767;"
+	//+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=1767; sargeRandomiseChance=50;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=1767;"
 }
 
 // ================================================================================
@@ -34,7 +34,7 @@ Create "sargeRandomiserOutput"
 		"Pitch" 4000
 		"Bank" f98
 	}
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=1186;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=1186;"
 }
 
 ////On a corpse near the R&D Section
@@ -47,7 +47,7 @@ Create "sargeRandomiserOutput"
 		"Pitch" 0
 		"Bank" 0
 	}
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=1186; sargeContainer=1153;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=1186; sargeContainer=1153;"
 }
 
 ////On a corpse near the ramped turret area
@@ -60,7 +60,7 @@ Create "sargeRandomiserOutput"
 		"Pitch" 0
 		"Bank" 0
 	}
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=1186; sargeContainer=702;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=1186; sargeContainer=702;"
 }
 
 ////In the corner of the morgue on the top level
@@ -73,5 +73,5 @@ Create "sargeRandomiserOutput"
 		"Pitch" c024
 		"Bank" e560
 	}
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=1186;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=1186;"
 }

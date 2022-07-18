@@ -11,38 +11,45 @@ class sargeRandomiserInput extends sargeBase
 		SetOneShotTimer("RandomiseTimer", 0.2);
 	}
 	
-	function Roll(links)
-	{
-		local max = links.len();
+	function Roll(outputs,item)
+	{	
+		local max = outputs.len();
+			
 		local roll = Data.RandInt(0, max);
 		
-		local object_name = ShockGame.GetArchetypeName(self);
+		local object_name = ShockGame.GetArchetypeName(item);
 		if (roll == 0)
 		{
-			print ("Rolled a 0/" + max + " - " + object_name + " (" + self + ") will remain in original location.");
+			print ("Rolled a 0/" + max + " - " + object_name + " (" + item + ") will remain in original location.");
 		}
 		else
 		{
-			print ("Rolled a " + roll + "/" + max + " - " + object_name + " (" + self + ") sent to output " + (roll-1) + ".");
-			SendMessage(links[roll-1].dest, "OutputSelected",self);
-		}	
+			print ("Rolled a " + roll + "/" + max + " - " + object_name + " (" + item + ") sent to output " + (roll-1) + ".");
+			SendMessage(outputs[roll-1].dest, "OutputSelected",item);
+			outputs.remove(roll-1);
+		}
+	}
 	
-		//LinkTools.LinkSetData
-		
-		//cMultiParm SendMessage(object to, string sMessage, cMultiParm data, cMultiParm data2, cMultiParm data3);
+	function RollForAllInputs(outputs)
+	{
+		foreach (value in getParamArray("sargeInputItem",self))
+		{
+			value = value == "[me]" ? self : value;
+			Roll(outputs,value);
+		}
 	}
 	
 	function OnTimer()
 	{
-		local links = [];
+		local outputs = [];
 		if (message().name == "RandomiseTimer")
 		{
-			//There's no linkset.len() or linkset[0] equivalent functionality...
+			//There's no outputset.len() or outputset[0] equivalent functionality...
 			//So we'll do our own array, with hookers, and blackjack!
-			foreach (index,outLink in Link.GetAll(linkkind("~Target"),self))
-				links.append(sLink(outLink));
+			foreach (outLink in Link.GetAll(linkkind("~Target"),self))
+				outputs.append(sLink(outLink));
 			
-			Roll(links);
+			RollForAllInputs(outputs);
 		}
 	}
 }

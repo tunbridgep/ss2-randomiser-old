@@ -15,7 +15,7 @@ Create "sargeRandomiserOutput"
 		"Bank" 0
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=1050; sargeDisablePhysics=true;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=1050; sargeDisablePhysics=true;"
 }
 
 // ================================================================================
@@ -35,7 +35,7 @@ Create "sargeRandomiserOutput"
 		"Bank" 0
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=338;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=338;"
 }
 
 ////Near the locked door to Science Sector (with the ghost)
@@ -49,7 +49,7 @@ Create "sargeRandomiserOutput"
 		"Bank" 0
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=338;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=338;"
 }
 
 ////In the container on the lower level
@@ -63,5 +63,5 @@ Create "sargeRandomiserOutput"
 		"Bank" 0
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput=338; sargeContainer=105"
+	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=338; sargeContainer=105"
 }
