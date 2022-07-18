@@ -1,0 +1,19 @@
+// ================================================================================
+// Crew Section Keycard - 1904
+// ================================================================================
+
++MetaProp 1904 "Object Randomiser"
+
+////On the table
+Create "sargeRandomiserOutputPosition"
+{
+	+ObjProp "Position"
+	{
+		"Location" "25.0463, -255.777, -13.3894"
+		"Heading" 19d0
+		"Pitch" 0
+		"Bank" 0
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1904;"
+}

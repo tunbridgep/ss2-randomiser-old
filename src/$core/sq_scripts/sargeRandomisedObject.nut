@@ -12,17 +12,18 @@ class sargeRandomisedObject extends sargeBase
 	{
 		local max = links.len();
 		local roll = Data.RandInt(0, max);
-		print ("Rolled " + roll + "/" + max);
 		
 		local object_name = ShockGame.GetArchetypeName(self);
-		
-		//If we roll a 0, do nothing - stay in our current place
-		//Otherwise, send us off to whichever link we triggered.
-		if (roll > 0)
-			SendMessage(links[roll-1].dest, "RandomiserSelected");
+		if (roll == 0)
+		{
+			print ("Rolled a 0/" + max + " - " + object_name + " (" + self + ") will remain in original location.");
+		}
 		else
-			print ("Rolled a 0 - " + object_name + " not randomised");
-		
+		{
+			print ("Rolled a " + roll + "/" + max + " - " + object_name + " (" + self + ") sent to output " + (roll-1) + ".");
+			SendMessage(links[roll-1].dest, "OutputSelected");
+		}	
+	
 		//LinkTools.LinkSetData
 		
 		//cMultiParm SendMessage(object to, string sMessage, cMultiParm data, cMultiParm data2, cMultiParm data3);
