@@ -33,18 +33,17 @@ class sargeRandomiserOutput extends sargeBase
 	
 	function DisablePhysics()
 	{
-		//item.SetProperty("PhysType","None");
-		//Property.Set(item,"PhysType","Type",0);
-		//Physics.SetGravity(item,0.0);
-		//Physics.SetVelocity(item,vector(0,0,0));
 		Property.Remove(item,"PhysType");
 		Property.Remove(item,"PhysAttr");
+		print ("disabling physics for " + item);
 	}
 	
-	//Override this
 	function OnOutputSelected()
-	{
+	{	
 		RemoveContainsLinks();
+		
+		if (getParam("sargeDisablePhysics",FALSE))
+			DisablePhysics();
 		//print ("OnOutputSelected called!");
 	}
 }
@@ -59,16 +58,7 @@ class sargeRandomiserOutputPosition extends sargeRandomiserOutput
 	function OnOutputSelected()
 	{
 		base.OnOutputSelected();
-		local disablePhysics = getParam("sargeDisablePhysics",FALSE);
-		
 		print ("moving item " + item + " to position " + Object.Position(self));
-		
-		if (disablePhysics)
-		{
-			DisablePhysics();
-			print ("disabling physics for " + item);
-		}
-		
 		Object.Teleport(item, Object.Position(self), Object.Facing(self));
 	}
 }
@@ -78,11 +68,11 @@ class sargeRandomiserOutputContainer extends sargeRandomiserOutput
 {
 	function OnOutputSelected()
 	{
-		base.OnOutputSelected();
 		local container = getParam("sargeContainer",0);
 		
 		if (container)
 		{
+			base.OnOutputSelected();
 			print ("moving item " + item + " to container " + container);
 			Link.Create(linkkind("Contains"),container,item);
 		}
@@ -96,11 +86,11 @@ class sargeRandomiserOutputSwap extends sargeRandomiserOutput
 {
 	function OnOutputSelected()
 	{
-		base.OnOutputSelected();
 		local swap = getParam("sargeSwapObject",0);
 		
 		if (swap)
 		{
+			base.OnOutputSelected();
 			print ("swapping item " + item + " with swap object " + swap);
 			
 			local item_position = Object.Position(item);
