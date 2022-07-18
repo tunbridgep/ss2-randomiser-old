@@ -8,6 +8,15 @@ class sargeRandomiserAreaHandler extends sargeBase
 	outputs = null;
 	used = null;
 	
+	//useful when moving things like bodies or crates around, or making specific lists for weapons etc
+	unsafe = false;
+	
+	//useful when ???
+	readonly = false;
+	
+	//useful when you want to add various specific linked items to certain inventories, such as power cells, without having any items taken
+	writeonly = false;
+	
 	//These won't be automatically picked up from inventories
 	//But we can still manually link them
 	static dontModify = [
@@ -32,6 +41,10 @@ class sargeRandomiserAreaHandler extends sargeBase
 		inputs = [];
 		outputs = [];
 		used = [];
+		
+		unsafe = getParam("allowUnsafe",0);
+		readonly = getParam("containerReadOnly",0);
+		writeonly = getParam("containerWriteOnly",0);
 	
 		local targets = [];
 		foreach (outLink in Link.GetAll(linkkind("~Target"),self))
@@ -87,18 +100,19 @@ class sargeRandomiserAreaHandler extends sargeBase
 			
 			if (isMarker)
 			{
-				//if (!Object.HasMetaProperty(processing, "Object Randomiser Output"))
-				//	Object.AddMetaProperty(processing, "Object Randomiser Output");
 				outputs.append([processing,true]);
 			}
 			else if (isContainer || isCorpse)
 			{
 				if (!Object.HasMetaProperty(processing, "Object Randomiser Output Container"))
 					Object.AddMetaProperty(processing, "Object Randomiser Output Container");
-				ProcessInventory(processing);
-				outputs.append([processing,false]);
+					
+				if (!writeonly)
+					ProcessInventory(processing);
+				if (!readonly)
+					outputs.append([processing,false]);
 			}
-			else if (isInventoryItem) //Not a container or a marker, it must be some other item.
+			else if (isInventoryItem || unsafe) //Not a container or a marker, it must be some other item.
 			{
 				inputs.append(processing);
 			}
@@ -126,7 +140,7 @@ class sargeRandomiserAreaHandler extends sargeBase
 		{
 			local item = sLink(outLink).dest;
 			
-			if (canModify(item))
+			if (unsafe || canModify(item))
 			{
 				inputs.append(item);
 				print ("Adding " + item + " to input list");
