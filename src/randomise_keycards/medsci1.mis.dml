@@ -5,7 +5,7 @@
 +MetaProp 1050 "Object Randomiser"
 
 ////On the table
-Create "sargeRandomiserOutputPosition"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{
@@ -25,7 +25,7 @@ Create "sargeRandomiserOutputPosition"
 +MetaProp 338 "Object Randomiser"
 
 ////Opposite Room Location, near the other Cryo chambers
-Create "sargeRandomiserOutputPosition"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{
@@ -39,7 +39,7 @@ Create "sargeRandomiserOutputPosition"
 }
 
 ////Near the locked door to Science Sector (with the ghost)
-Create "sargeRandomiserOutputPosition"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{
@@ -53,7 +53,7 @@ Create "sargeRandomiserOutputPosition"
 }
 
 ////In the container on the lower level
-Create "sargeRandomiserOutputContainer"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{

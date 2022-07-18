@@ -5,7 +5,7 @@
 +MetaProp 1767 "Object Randomiser"
 
 ////Near the wrench under collapsed wall
-Create "sargeRandomiserOutputPosition"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{
@@ -25,7 +25,7 @@ Create "sargeRandomiserOutputPosition"
 +MetaProp 1186 "Object Randomiser"
 
 ////In the section with the power-outage and ambush, near a security crate.
-Create "sargeRandomiserOutputPosition"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{
@@ -38,7 +38,7 @@ Create "sargeRandomiserOutputPosition"
 }
 
 ////On a corpse near the R&D Section
-Create "sargeRandomiserOutputContainer"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{
@@ -51,7 +51,7 @@ Create "sargeRandomiserOutputContainer"
 }
 
 ////On a corpse near the ramped turret area
-Create "sargeRandomiserOutputContainer"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{
@@ -64,7 +64,7 @@ Create "sargeRandomiserOutputContainer"
 }
 
 ////In the corner of the morgue on the top level
-Create "sargeRandomiserOutputPosition"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{

@@ -5,7 +5,7 @@
 +MetaProp 1133 "Object Randomiser"
 
 ////Move to desk in crew quarters room 2 doors to the left of restroom
-Create "sargeRandomiserOutputContainer"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{
@@ -20,7 +20,7 @@ Create "sargeRandomiserOutputContainer"
 
 /*
 ////Move to desk in crew quarters upstairs room
-Create "sargeRandomiserOutputContainer"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{
@@ -35,7 +35,7 @@ Create "sargeRandomiserOutputContainer"
 */
 
 ////Move to corpse outside crew quarters upstairs room
-Create "sargeRandomiserOutputContainer"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{
@@ -49,7 +49,7 @@ Create "sargeRandomiserOutputContainer"
 }
 
 ////Move to triop crate inside cafeteria in crew quarters
-Create "sargeRandomiserOutputContainer"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{
@@ -63,7 +63,7 @@ Create "sargeRandomiserOutputContainer"
 }
 
 ////Move near dead guy in ceiling area near Watts office
-Create "sargeRandomiserOutputPosition"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{
@@ -74,4 +74,66 @@ Create "sargeRandomiserOutputPosition"
 	}
 	
 	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1133"
+}
+
+////Move into weird back room in first room in Crew Quarters
+Create "sargeRandomiserOutput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-119.204, -139.103, 0.469487"
+		"Heading" 0
+		"Pitch" 0
+		"Bank" 0
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1133"
+}
+
+// ================================================================================
+// Modified Pistol on the Rafters near camera in Crew Quarters - 1431
+// ================================================================================
+
++MetaProp 1431 "Object Randomiser"
+
+////Move to desk in the security room with the armour
+Create "sargeRandomiserOutput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-83.7235, -2.17129, -0.64686"
+		"Heading" 0
+		"Pitch" c000
+		"Bank" 0
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1431; sargeDisablePhysics=true;"
+}
+
+////Move to monitors near Armoury
+Create "sargeRandomiserOutput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-82.9406, -85.3285, -0.489996"
+		"Heading" 3ef4
+		"Pitch" 522c
+		"Bank" 3a88
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1431; sargeDisablePhysics=true;"
+}
+
+////Move to broken door quarters in crew quarters
+Create "sargeRandomiserOutput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-126.724, -123.649, -3.79955"
+		"Heading" 1ed4
+		"Pitch" 4080
+		"Bank" 0
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1431;"
 }

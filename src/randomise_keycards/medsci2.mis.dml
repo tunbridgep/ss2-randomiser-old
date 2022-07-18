@@ -6,7 +6,7 @@
 +MetaProp 105 "Object Randomiser"
 
 ////Near the turret outside the biopsy lab
-Create "sargeRandomiserOutputPosition"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{
@@ -20,7 +20,7 @@ Create "sargeRandomiserOutputPosition"
 }
 
 ////In the radiation room near the Biopsy lab
-Create "sargeRandomiserOutputPosition"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{
@@ -37,7 +37,7 @@ Create "sargeRandomiserOutputPosition"
 +MetaProp 1904 "Object Randomiser"
 
 ////Near the turret outside the biopsy lab
-Create "sargeRandomiserOutputPosition"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{
@@ -53,10 +53,36 @@ Create "sargeRandomiserOutputPosition"
 
 // ================================================================================
 // R&D Keycard - 772
-// Maybe remove this as Polito tells you to find it in this room, although she does say MAYBE he has a backup R&D Card, so there's that.
-// It doesn't make a lot of sense that it would go missing, though.
+// There's not much I can really do with this, since Polito gives you an email telling you to search his room
+// I guess she says "maybe it's in here", so it could go missing, but I will play it safe for now
 // ================================================================================
 
-/*
 +MetaProp 772 "Object Randomiser"
-*/
+
+////On top of Dr Watts Desk
+Create "sargeRandomiserOutput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-98.2325, 86.3009, -12.7794"
+		"Heading" 0
+		"Pitch" 0
+		"Bank" 0
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=772; sargeDisablePhysics=true;"
+}
+
+////On Dr Watts Desk shelf
+Create "sargeRandomiserOutput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-87.1325, 90.8009, -11.9336"
+		"Heading" dcc
+		"Pitch" 0
+		"Bank" 0
+	}
+	
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=772;"
+}

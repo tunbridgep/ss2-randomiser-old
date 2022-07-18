@@ -13,13 +13,13 @@ class sargeRandomiserOutput extends sargeBase
 		}
 		else
 		{
-			print ("sargeRandomiseObject not set - output will not function!");
+			print ("sargeRandomiseObject not set - output " + self + " will not function!");
 		}
 		//LinkTools.LinkSetData(link, "sargeRandomiseChance", getParam("sargeRandomiseChance",50));
 	}
 	
-	//Remove any contains links, so that items can actually exist in the world
-	function RemoveContainsLinks()
+	//If an item has a contains link, it should be duplicated so that it actually works when placed in the world
+	function CloneContainedItem()
 	{
 		//If item is contained, we need to clone it and delete the old one
 		if (Link.AnyExist(linkkind("~Contains"),item))
@@ -29,8 +29,6 @@ class sargeRandomiserOutput extends sargeBase
 			item = item2;
 			
 		}
-		//foreach (outLink in Link.GetAll(linkkind("~Contains"),item))
-			//Link.Destroy(outLink);
 	}
 	
 	function DisablePhysics()
@@ -40,59 +38,26 @@ class sargeRandomiserOutput extends sargeBase
 		print ("disabling physics for " + item);
 	}
 	
-	function OnOutputSelected()
+	function RemoveContainsLinks()
 	{
-		RemoveContainsLinks();
+		foreach (outLink in Link.GetAll(linkkind("~Contains"),item))
+			Link.Destroy(outLink);
+	}
 	
-		if (getParam("sargeDisablePhysics",FALSE))
-			DisablePhysics();
-		//print ("OnOutputSelected called!");
-	}
-}
-
-// ================================================================================
-// Various classes for handling what a randomiser should do when chosen - move the object to it's position, put it in a linked container, etc.
-
-
-//When chosen, move the target object to this objects current position - used for positional randomness
-class sargeRandomiserOutputPosition extends sargeRandomiserOutput
-{
-	function OnOutputSelected()
-	{
-		base.OnOutputSelected();
-		print ("moving item " + item + " to position " + Object.Position(self));
-		Object.Teleport(item, Object.Position(self), Object.Facing(self));
-	}
-}
-
-//When chosen, move the target object to this objects linked container - used for positional randomness to allow moving objects into crates etc
-class sargeRandomiserOutputContainer extends sargeRandomiserOutput
-{
 	function OnOutputSelected()
 	{
 		local container = getParam("sargeContainer",0);
+		local swap = getParam("sargeSwapObject",0);
+		local create = getParam("sargeCreateObject",0);
 		
-		if (container)
+		if (container) //Specify that an object should be moved to a container
 		{
-			base.OnOutputSelected();
 			print ("moving item " + item + " to container " + container);
+			RemoveContainsLinks();
 			Link.Create(linkkind("Contains"),container,item);
 		}
-		else
-			print ("sargeContainer not set - output will not function!");
-	}
-}
-
-//When chosen, swap the target and the swapobject - used for things like moving sim units and replacing them with generic computer terminals
-class sargeRandomiserOutputSwap extends sargeRandomiserOutput
-{
-	function OnOutputSelected()
-	{
-		local swap = getParam("sargeSwapObject",0);
-		
-		if (swap)
+		else if (swap) //Swap the positions of 2 objects
 		{
-			base.OnOutputSelected();
 			print ("swapping item " + item + " with swap object " + swap);
 			
 			local item_position = Object.Position(item);
@@ -105,7 +70,21 @@ class sargeRandomiserOutputSwap extends sargeRandomiserOutput
 			Object.Teleport(swap, item_position, item_facing);
 			
 		}
+		else if (create)
+		{
+			print ("creating item " + create + " from " + item + " at position " + Object.Position(self));
+			item = Object.Create(create);
+			Object.Teleport(item, Object.Position(self), Object.Facing(self));
+		}
 		else
-			print ("sargeSwapObject not set - output will not function!");
+		{
+			CloneContainedItem();
+			print ("moving item " + item + " to position " + Object.Position(self));
+			Object.Teleport(item, Object.Position(self), Object.Facing(self));
+		}
+	
+		if (getParam("sargeDisablePhysics",FALSE))
+			DisablePhysics();
+		//print ("OnOutputSelected called!");
 	}
 }

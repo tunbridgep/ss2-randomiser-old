@@ -5,7 +5,7 @@
 +MetaProp 326 "Object Randomiser"
 
 ////Move to main walkway near restroom
-Create "sargeRandomiserOutputPosition"
+Create "sargeRandomiserOutput"
 {
 	+ObjProp "Position"
 	{

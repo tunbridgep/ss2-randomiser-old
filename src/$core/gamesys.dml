@@ -9,55 +9,14 @@ CreateArch "Misc Metaprops" "Object Randomiser"
 	}
 }
 
-//Moves the associated object to the location of the output
-CreateArch "Marker" "sargeRandomiserOutputPosition"
+//Output for the randomiser system
+CreateArch "Marker" "sargeRandomiserOutput"
 {
 	+ObjProp "Scripts"
 	{
-		"Script 0" "sargeRandomiserOutputPosition"
+		"Script 0" "sargeRandomiserOutput"
 		//"Script 1" "NVSpy"
 		//"Script 2" "NVLinkBuilder"
 		"Don't inherit" false
 	}
 }
-
-//Moves the associated output to the specified container
-CreateArch "Marker" "sargeRandomiserOutputContainer"
-{
-	+ObjProp "Scripts"
-	{
-		"Script 0" "sargeRandomiserOutputContainer"
-		//"Script 0" "sargeRandomiserBase"
-		//"Script 1" "NVSpy"
-		//"Script 2" "NVLinkBuilder"
-		"Don't inherit" false
-	}
-}
-
-//Swaps two world objects
-CreateArch "Marker" "sargeRandomiserOutputSwap"
-{
-	+ObjProp "Scripts"
-	{
-		"Script 0" "sargeRandomiserOutputSwap"
-		//"Script 0" "sargeRandomiserBase"
-		//"Script 1" "NVSpy"
-		//"Script 2" "NVLinkBuilder"
-		"Don't inherit" false
-	}
-}
-
-/*
-//Creates a new object at the location of the output
-CreateArch "Marker" "sargeRandomItemCreator"
-{
-	+ObjProp "Scripts"
-	{
-		"Script 0" "sargeRandomItemCreator"
-		//"Script 0" "sargeRandomiserBase"
-		//"Script 1" "NVSpy"
-		//"Script 2" "NVLinkBuilder"
-		"Don't inherit" false
-	}
-}
-*/
