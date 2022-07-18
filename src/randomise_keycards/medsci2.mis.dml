@@ -4,16 +4,16 @@
 
 +MetaProp 1904 "Object Randomiser"
 
-////On the table
+////Near the turret outside the biopsy lab
 Create "sargeRandomiserOutputPosition"
 {
 	+ObjProp "Position"
 	{
-		"Location" "25.0463, -255.777, -13.449"
-		"Heading" 19d0
+		"Location" "75.8381, -275.471, -3.50345"
+		"Heading" 4000
 		"Pitch" 0
-		"Bank" 0
+		"Bank" c474
 	}
 	
-	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1904;"
+	+ObjProp "DesignNoteSS" = "sargeRandomiseObject=1904; sargeDisablePhysics=true;"
 }

@@ -31,6 +31,16 @@ class sargeRandomiserOutput extends sargeBase
 			//Link.Destroy(outLink);
 	}
 	
+	function DisablePhysics()
+	{
+		//item.SetProperty("PhysType","None");
+		//Property.Set(item,"PhysType","Type",0);
+		//Physics.SetGravity(item,0.0);
+		//Physics.SetVelocity(item,vector(0,0,0));
+		Property.Remove(item,"PhysType");
+		Property.Remove(item,"PhysAttr");
+	}
+	
 	//Override this
 	function OnOutputSelected()
 	{
@@ -55,9 +65,8 @@ class sargeRandomiserOutputPosition extends sargeRandomiserOutput
 		
 		if (disablePhysics)
 		{
+			DisablePhysics();
 			print ("disabling physics for " + item);
-			Physics.SetGravity(item,0.0);
-			Physics.SetVelocity(item,vector(0,0,0));
 		}
 		
 		Object.Teleport(item, Object.Position(self), Object.Facing(self));
