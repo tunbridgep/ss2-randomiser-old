@@ -1,8 +1,6 @@
 DML1
 
 //Attach this to an item and then link outputs to it for a quick, easy randomiser.
-//Alternatively, slap this on a marker and specify multiple objects with sargeInputItem0=, sargeInputItem1= etc.
-//Then you can make multiple input items use multiple outputs.
 CreateArch "Misc Metaprops" "Object Randomiser"
 {
 	+ObjProp "Scripts"
@@ -12,19 +10,23 @@ CreateArch "Misc Metaprops" "Object Randomiser"
 	}
 }
 
-/*
-//Input for the randomiser system
-CreateArch "Marker" "sargeRandomiserInput"
+//Attach this to an item and then link outputs to it for a quick, easy container output.
+CreateArch "Misc Metaprops" "Object Randomiser Output"
 {
 	+ObjProp "Scripts"
 	{
-		"Script 0" "sargeRandomiserInput"
+		"Script 0" "sargeRandomiserOutput"
 		"Don't inherit" false
 	}
 }
-*/
 
-//Output for the randomiser system
+//Attach this to a container and then link inputs to it for a quick, easy container output.
+CreateArch "Object Randomiser Output" "Object Randomiser Output Container"
+{
+	+ObjProp "DesignNoteSS" = "sargeContainer=[me];"
+}
+
+//Output for the randomiser system, this is usually positional
 CreateArch "Marker" "sargeRandomiserOutput"
 {
 	+ObjProp "Scripts"
@@ -32,6 +34,16 @@ CreateArch "Marker" "sargeRandomiserOutput"
 		"Script 0" "sargeRandomiserOutput"
 		//"Script 1" "NVSpy"
 		//"Script 2" "NVLinkBuilder"
+		"Don't inherit" false
+	}
+}
+
+//Input for the mass loot system. It's "neater" to use a marker as an input or output when we are dealing with many objects
+CreateArch "Marker" "sargeRandomiserAreaHandler"
+{
+	+ObjProp "Scripts"
+	{
+		"Script 0" "sargeRandomiserAreaHandler"
 		"Don't inherit" false
 	}
 }

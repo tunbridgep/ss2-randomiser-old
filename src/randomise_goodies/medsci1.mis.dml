@@ -1,0 +1,347 @@
+// ================================================================================
+// Cryo Recovery Suite.
+// ================================================================================
+
+////Create a randomiser
+Create "sargeRandomiserAreaHandler" "SargeCryoRandomInput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "56.0821, -95.0993, -15"
+		"Heading" 0
+		"Pitch" 0
+		"Bank" 0
+	}
+}
+
+////Add some items to it
+
+//Cryo Code guy (12451)
++Link 1680 "SargeCryoRandomInput" "Target"
+{
+}
+
+
+//Wrench Guy at the start of the game
++Link 1177 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Box immediately after exiting the airlock
++Link 910 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Corpse in downstairs computer room
++Link 831 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Corpse right next to skill trainers
++Link 490 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Crate near 00000 door with audio log on top
++Link 105 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Corpse near 00000 door
++Link 1584 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Corpse near Cryo Chambers upstairs
++Link 219 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Corpse in Computer Room Upstairs
++Link 931 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Med hypo in the upper level
++Link 234 "SargeCryoRandomInput" "Target"
+{
+}
+
+//"Floor nanites" near the door to Sci
++Link 1505 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Add the 2 items from the computer station smashable glass area
++Link 607 "SargeCryoRandomInput" "Target"
+{
+}
++Link 599 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Create a marker to spawn items at, inside the smashable glass section
+Create "sargeRandomiserOutput" "SargeRandomCryoSmashableOutput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "42.7551, -163.693, 5.39923"
+		"Heading" d134
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomCryoSmashableOutput" "SargeCryoRandomInput" "Target"
+{
+}
+
+//Create a marker to spawn items at, where the floor hypo used to be (the room with the ramp and the exploding computer)
+Create "sargeRandomiserOutput" "SargeRandomCryoFloorSpot"
+{
+	+ObjProp "Position"
+	{
+		"Location" "58.015, -158.769, -3.55719"
+		"Heading" 0
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomCryoFloorSpot" "SargeCryoRandomInput" "Target"
+{
+}
+
+// ================================================================================
+// Science Sector
+// Note: We separate the "normal" loot from the "special" (2 hack crates) loot by using 2 separate loot manager object
+// ================================================================================
+
+////Create a randomiser
+Create "sargeRandomiserAreaHandler" "SargeMedSci1RandomInput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-9.36382, -149.547, -0.85719"
+		"Heading" 0
+		"Pitch" 0
+		"Bank" 0
+	}
+}
+
+////Add some items to it
+
+//A Desk
++Link 258 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Desk
++Link 533 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Desk
++Link 483 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Desk
++Link 1071 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Desk
++Link 915 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Desk
++Link 1391 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Crate
++Link 525 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Crate
++Link 562 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Crate
++Link 565 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Crate
++Link 1432 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Crate
++Link 893 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Crate
++Link 900 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Crate
++Link 976 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Trashcan
++Link 1796 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+////Morgue
+
+//A Body Bag
++Link 794 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Body Bag
++Link 798 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Body Bag
++Link 828 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Body Bag
++Link 684 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+////Corpses
+
+
+//Shotgun guy.
++Link 967 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 1182 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 1362 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 1351 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 800 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 735 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 833 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 294 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 1095 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 165 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 1153 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 507 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 781 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 1428 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 702 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 867 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 998 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 492 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+// ================================================================================
+// Science Sector Special Items
+// Note: We separate the "normal" loot from the "special" (2 hack crates) loot by using 2 separate loot manager object
+// ================================================================================
+
+////Create a randomiser
+Create "sargeRandomiserAreaHandler" "SargeMedSci1RandomInputSpecial"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-9.36382, -158.847, -0.85719"
+		"Heading" 0
+		"Pitch" 0
+		"Bank" 0
+	}
+}
+
+//A Hackable Crate
++Link 467 "SargeMedSci1RandomInputSpecial" "Target"
+{
+}
+
+//A Hackable Crate
++Link 471 "SargeMedSci1RandomInputSpecial" "Target"
+{
+}
+
+//A Hackable Crate
++Link 474 "SargeMedSci1RandomInputSpecial" "Target"
+{
+}

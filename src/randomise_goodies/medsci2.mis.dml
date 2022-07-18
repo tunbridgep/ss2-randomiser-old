@@ -18,7 +18,7 @@ Create "sargeRandomiserOutput" "CoolOutput"
 	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=1133; sargeContainer=418"
 }
 
-+Link 1133 "CoolOutput" "Target"
+//+Link 1133 "CoolOutput" "Target"
 
 /*
 ////Move to desk in crew quarters upstairs room

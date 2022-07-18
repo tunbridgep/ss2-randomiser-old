@@ -5,7 +5,7 @@
 +MetaProp 1050 "Object Randomiser"
 
 ////On the table
-Create "sargeRandomiserOutput"
+Create "sargeRandomiserOutput" "SargeRandomCryoKeycardOutput1"
 {
 	+ObjProp "Position"
 	{
@@ -13,9 +13,12 @@ Create "sargeRandomiserOutput"
 		"Heading" d44
 		"Pitch" 0
 		"Bank" 0
-	}
-	
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=1050; sargeDisablePhysics=true;"
+	}	
+	+ObjProp "DesignNoteSS" = "sargeDisablePhysics=true;"
+}
+
++Link 1050 "SargeRandomCryoKeycardOutput1" "~Target"
+{
 }
 
 // ================================================================================
@@ -24,22 +27,23 @@ Create "sargeRandomiserOutput"
 
 +MetaProp 338 "Object Randomiser"
 
-////Opposite Room Location, near the other Cryo chambers
-Create "sargeRandomiserOutput"
+////Opposite Room Location, near the other Cryo chambers, on a computer terminal
+Create "sargeRandomiserOutput" "SargeRandomScienceKeycardOutput1"
 {
 	+ObjProp "Position"
 	{
-		"Location" "29.2672, -107.361, -4.0"
-		"Heading" 1c71
+		"Location" "51.6116, -105.93, -0.24"
+		"Heading" f100
 		"Pitch" 0
 		"Bank" 0
 	}
-	
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=338;"
+}
++Link 338 "SargeRandomScienceKeycardOutput1" "~Target"
+{
 }
 
 ////Near the locked door to Science Sector (with the ghost)
-Create "sargeRandomiserOutput"
+Create "sargeRandomiserOutput" "SargeRandomScienceKeycardOutput2"
 {
 	+ObjProp "Position"
 	{
@@ -48,20 +52,13 @@ Create "sargeRandomiserOutput"
 		"Pitch" 0
 		"Bank" 0
 	}
-	
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=338;"
+}
++Link 338 "SargeRandomScienceKeycardOutput2" "~Target"
+{
 }
 
-////In the container on the lower level
-Create "sargeRandomiserOutput"
+////In a crate on the lower level
++MetaProp 105 "Object Randomiser Output Container"
++Link 338 105 "~Target"
 {
-	+ObjProp "Position"
-	{
-		"Location" "63.2875, -166.773, -18.0008"
-		"Heading" 1828
-		"Pitch" 0
-		"Bank" 0
-	}
-	
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=338; sargeContainer=105"
 }

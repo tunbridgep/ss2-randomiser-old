@@ -1,11 +1,11 @@
 // ================================================================================
-// First Battery Near Airlock Door - 1767
+// First Power Cell Near Airlock Door - 1767
 // ================================================================================
 
 +MetaProp 1767 "Object Randomiser"
 
 ////Near the wrench under collapsed wall
-Create "sargeRandomiserOutput"
+Create "sargeRandomiserOutput" "SargeRandomMedsciPowercell1Output1"
 {
 	+ObjProp "Position"
 	{
@@ -14,57 +14,37 @@ Create "sargeRandomiserOutput"
 		"Pitch" c000
 		"Bank" 4000
 	}
-	//+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=1767; sargeRandomiseChance=50;"
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=1767;"
+}
++Link 1767 "SargeRandomMedsciPowercell1Output1" "~Target"
+{
 }
 
 // ================================================================================
-// Battery Next to MedSci2 Airlock Door - 1186
+// Power Cell Next to MedSci2 Airlock Door - 1186
 // ================================================================================
 
 +MetaProp 1186 "Object Randomiser"
 
-////In the section with the power-outage and ambush, near a security crate.
-Create "sargeRandomiserOutput"
+////In the section with the power-outage and ambush, in a crate.
++MetaProp 976 "Object Randomiser Output Container"
++Link 1186 976 "~Target"
 {
-	+ObjProp "Position"
-	{
-		"Location" "35.6386, -30.9467, -3.65788"
-		"Heading" 3ec
-		"Pitch" 4000
-		"Bank" f98
-	}
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=1186;"
 }
 
 ////On a corpse near the R&D Section
-Create "sargeRandomiserOutput"
++MetaProp 1153 "Object Randomiser Output Container"
++Link 1186 1153 "~Target"
 {
-	+ObjProp "Position"
-	{
-		"Location" "43.2443, 26.7414, -3.89215"
-		"Heading" 0
-		"Pitch" 0
-		"Bank" 0
-	}
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=1186; sargeContainer=1153;"
 }
 
 ////On a corpse near the ramped turret area
-Create "sargeRandomiserOutput"
++MetaProp 702 "Object Randomiser Output Container"
++Link 1186 702 "~Target"
 {
-	+ObjProp "Position"
-	{
-		"Location" "-48.8942, -6.37491, -14.7875"
-		"Heading" 0
-		"Pitch" 0
-		"Bank" 0
-	}
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=1186; sargeContainer=702;"
 }
 
 ////In the corner of the morgue on the top level
-Create "sargeRandomiserOutput"
+Create "sargeRandomiserOutput" "SargeRandomMedsciPowercell2Output1"
 {
 	+ObjProp "Position"
 	{
@@ -73,5 +53,7 @@ Create "sargeRandomiserOutput"
 		"Pitch" c024
 		"Bank" e560
 	}
-	+ObjProp "DesignNoteSS" = "sargeRandomiserInput0=1186;"
+}
++Link 1186 "SargeRandomMedsciPowercell2Output1" "~Target"
+{
 }

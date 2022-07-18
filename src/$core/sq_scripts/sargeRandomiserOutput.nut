@@ -2,19 +2,6 @@
 // Base class for randomisers
 class sargeRandomiserOutput extends sargeBase
 {
-	function Init()
-	{
-		local inputs = getParamArray("sargeRandomiserInput");
-	
-		if (inputs.len() == 0)
-			print ("sargeRandomiserInput[] not set - output " + self + " has no inputs and will not function!");
-		else
-		{
-			foreach(input in inputs)
-				Link.Create(linkkind("Target"), self, input);
-		}
-	}
-	
 	//If an item has a contains link, it should be cloned so that it actually works when placed in the world
 	function CloneContainedItem(item)
 	{
@@ -45,18 +32,16 @@ class sargeRandomiserOutput extends sargeBase
 	function OnOutputSelected()
 	{
 		local item = message().data;
-		print (item);
 	
-		local maxRolls = getParam("sargeMaxRolls",1);
-		local container = getParam("sargeContainer",0);
+		local container = getParam("sargeContainer",false);
 		local swap = getParam("sargeSwapObject",0);
-		local create = getParam("sargeCreateObject",0);
+		local create = getParam("sargeCreateObject",false);
 		
 		if (container) //Specify that an object should be moved to a container
 		{
-			print ("moving item " + item + " to container " + container);
+			print ("moving item " + item + " to container " + self);
 			RemoveContainsLinks(item);
-			Link.Create(linkkind("Contains"),container,item);
+			Link.Create(linkkind("Contains"),self,item);
 		}
 		else if (swap) //Swap the positions of 2 objects
 		{
@@ -74,8 +59,8 @@ class sargeRandomiserOutput extends sargeBase
 		}
 		else if (create)
 		{
-			print ("creating item " + create + " from " + item + " at position " + Object.Position(self));
-			item = Object.Create(create);
+			print ("creating item from " + item + " at position " + Object.Position(self));
+			item = Object.Create(item);
 			Object.Teleport(item, Object.Position(self), Object.Facing(self));
 		}
 		else
@@ -88,6 +73,6 @@ class sargeRandomiserOutput extends sargeBase
 		if (getParam("sargeDisablePhysics",FALSE))
 			DisablePhysics(item);
 		
-		//print ("OnOutputSelected called!");
+		print ("OnOutputSelected called!");
 	}
 }
