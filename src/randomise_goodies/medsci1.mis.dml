@@ -16,6 +16,11 @@ Create "sargeRandomiserAreaHandler" "SargeCryoRandomInput"
 
 ////Add some items to it
 
+//Audio Log on top of Crate
++Link 267 "SargeCryoRandomInput" "Target"
+{
+}
+
 //Wrench in Power Recharge room
 +Link 1707 "SargeCryoRandomInput" "Target"
 {
@@ -24,6 +29,7 @@ Create "sargeRandomiserAreaHandler" "SargeCryoRandomInput"
 //And some other containers to manage
 
 //Cryo Code guy (12451)
++MetaProp 1608 "Object Randomiser - Dont Strip" //1608 vs 1680 is not a typo. 1608 is the log he carries.
 +Link 1680 "SargeCryoRandomInput" "Target"
 {
 }
@@ -85,6 +91,21 @@ Create "sargeRandomiserAreaHandler" "SargeCryoRandomInput"
 {
 }
 +Link 599 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Create a marker to spawn items at, on top of the crate where the audio log was
+Create "sargeRandomiserOutput" "SargeRandomOnTopOfCrateOutput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "62.8792, -166.147, -15.5756"
+		"Heading" 1555
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomOnTopOfCrateOutput" "SargeCryoRandomInput" "Target"
 {
 }
 
@@ -210,25 +231,25 @@ Create "sargeRandomiserAreaHandler" "SargeMedSci1RandomInput"
 ////Morgue
 
 //A Body Bag
-+MetaProp 794 "Object Randomiser  - Only Hypos"
++MetaProp 794 "Object Randomiser - Only Hypos"
 +Link 794 "SargeMedSci1RandomInput" "Target"
 {
 }
 
 //A Body Bag
-+MetaProp 798 "Object Randomiser  - Only Hypos"
++MetaProp 798 "Object Randomiser - Only Hypos"
 +Link 798 "SargeMedSci1RandomInput" "Target"
 {
 }
 
 //A Body Bag
-+MetaProp 828 "Object Randomiser  - Only Hypos"
++MetaProp 828 "Object Randomiser - Only Hypos"
 +Link 828 "SargeMedSci1RandomInput" "Target"
 {
 }
 
 //A Body Bag
-+MetaProp 684 "Object Randomiser  - Only Hypos"
++MetaProp 684 "Object Randomiser - Only Hypos"
 +Link 684 "SargeMedSci1RandomInput" "Target"
 {
 }
@@ -261,10 +282,12 @@ Create "sargeRandomiserAreaHandler" "SargeMedSci1RandomInput"
 {
 }
 
-//A Corpse
+/*
+//Hanging guy
 +Link 735 "SargeMedSci1RandomInput" "Target"
 {
 }
+*/
 
 //A Corpse
 +Link 833 "SargeMedSci1RandomInput" "Target"
@@ -326,7 +349,13 @@ Create "sargeRandomiserAreaHandler" "SargeMedSci1RandomInput"
 {
 }
 
+
+
 ////Randomise hand-placed "in world" items not in containers
+
+
+
+
 //A bag of chips
 +Link 551 "SargeMedSci1RandomInput" "Target"
 {
@@ -404,7 +433,59 @@ Create "sargeRandomiserAreaHandler" "SargeMedSci1RandomInput"
 {
 }
 
+//Nanites near recharding station
++Link 1665 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+////Audio Logs
+//Morgue
++Link 1338 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Table in R&D
++Link 253 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Char in Xerxes core
++Link 242 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Gurney near R&D
++Link 268 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Medical Lobby Bench
++Link 270 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Medical Lobby Bench
++Link 270 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+
 ////Create various markers on gurneys, shelves and other areas
+
+//On the floor near the first power charger (with the turrets)
+Create "sargeRandomiserOutput" "SargeRechargerInput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "2.54925, -25.0458, -13.2326"
+		"Heading" 0
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRechargerInput" "SargeMedSci1RandomInput" "Target"
+{
+}
 
 //Dr Watts room gurneys
 Create "sargeRandomiserOutput" "SargeRandomWattsRoomOutput2"
@@ -474,6 +555,20 @@ Create "sargeRandomiserOutput" "SargeRandomRandDPowerRoomDesk3"
 	}
 }
 +Link "SargeRandomRandDPowerRoomDesk3" "SargeMedSci1RandomInput" "Target"
+{
+}
+//Table in R&D Room with power charger
+Create "sargeRandomiserOutput" "SargeRandomRandDPowerRoomDesk4"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-11.8534, 109.565, -8.42286"
+		"Heading" f639
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomRandDPowerRoomDesk4" "SargeMedSci1RandomInput" "Target"
 {
 }
 
@@ -726,6 +821,8 @@ Create "sargeRandomiserAreaHandler" "SargeMedSci1RandomInputSpecial"
 		"Pitch" 0
 		"Bank" 0
 	}
+	
+	+ObjProp "DesignNoteSS" = "fairDistribution=true;"
 }
 
 //A Hackable Crate
@@ -757,3 +854,33 @@ Create "sargeRandomiserOutput" "SargeRandomRampTurret"
 +Link "SargeRandomRampTurret" "SargeMedSci1RandomInputSpecial" "Target"
 {
 }
+
+/*
+////Psi Pull Loot
+
+//Pullable Strength Booster in the Turret Nook area
++Link 478 "SargeMedSci1RandomInputSpecial" "Target"
+{
+}
+
+//Pullable Ammo in the Turret Nook area
++Link 2008 "SargeMedSci1RandomInputSpecial" "Target"
+{
+}
+
+//Create a marker to allow small things to spawn above the turret ramp
+Create "sargeRandomiserOutput" "SargeTurretNookInput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-40.92, -5.91, 4.41683"
+		"Heading" 3012
+		"Pitch" e08a
+		"Bank" e86b
+	}
+}
++MetaProp "SargeTurretNookInput" "Object Randomiser - Only Hypos And Ammo"
++Link "SargeTurretNookInput" "SargeMedSci1RandomInputSpecial" "Target"
+{
+}
+*/

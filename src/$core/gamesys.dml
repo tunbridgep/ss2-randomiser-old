@@ -62,7 +62,22 @@ CreateArch "Misc Metaprops" "Object Randomiser  - No Duplicates"
 {
 }
 
-//Allow a container to have only hypos added to it (used for body bags)
-CreateArch "Misc Metaprops" "Object Randomiser  - Only Hypos"
+//Allow an output to have only hypos added to it (used for body bags)
+CreateArch "Misc Metaprops" "Object Randomiser - Only Hypos"
+{
+}
+
+//Allow an output to have only hypos and ammo added to it (used for small nooks and psi-pull items mostly)
+CreateArch "Misc Metaprops" "Object Randomiser - Only Hypos And Ammo"
+{
+}
+
+//Disable physics on a spawned item
+CreateArch "Misc Metaprops" "Object Randomiser - Disable Physics"
+{
+}
+
+//Item won't be stripped from any inventories under any circumstances. Used for plot items, various logs, etc.
+CreateArch "Misc Metaprops" "Object Randomiser - Dont Strip"
 {
 }
