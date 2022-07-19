@@ -42,9 +42,9 @@ class sargeRandomiserAreaHandler extends sargeBase
 		outputs = [];
 		used = [];
 		
-		unsafe = getParam("allowUnsafe",0);
-		readonly = getParam("containerReadOnly",0);
-		writeonly = getParam("containerWriteOnly",0);
+		unsafe = getParam("allowUnsafe",false);
+		readonly = getParam("containerReadOnly",false);
+		writeonly = getParam("containerWriteOnly",false);
 	
 		local targets = [];
 		foreach (outLink in Link.GetAll(linkkind("~Target"),self))
@@ -118,7 +118,7 @@ class sargeRandomiserAreaHandler extends sargeBase
 			}
 			else
 			{
-				print ("Trying to do something with a non-inventory item! Stopped, so that you don't acidentally move the walls around etc.");
+				print ("Trying to do something with non-inventory item " + processing + "! Stopped, so that you don't acidentally move the walls around etc.");
 			}
 			
 		}

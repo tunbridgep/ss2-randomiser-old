@@ -43,6 +43,7 @@ Create "sargeRandomiserOutput" "SargeRandomMedsciPowercell1Output1"
 {
 }
 
+/*
 ////In the corner of the morgue on the top level
 Create "sargeRandomiserOutput" "SargeRandomMedsciPowercell2Output1"
 {
@@ -57,3 +58,4 @@ Create "sargeRandomiserOutput" "SargeRandomMedsciPowercell2Output1"
 +Link 1186 "SargeRandomMedsciPowercell2Output1" "~Target"
 {
 }
+*/
