@@ -30,6 +30,7 @@ Create "sargeRandomiserAreaHandler" "SargeCryoRandomInput"
 
 
 //Wrench Guy at the start of the game
++MetaProp 1177 "Object Randomiser  - No Duplicates"
 +Link 1177 "SargeCryoRandomInput" "Target"
 {
 }
@@ -209,21 +210,25 @@ Create "sargeRandomiserAreaHandler" "SargeMedSci1RandomInput"
 ////Morgue
 
 //A Body Bag
++MetaProp 794 "Object Randomiser  - Only Hypos"
 +Link 794 "SargeMedSci1RandomInput" "Target"
 {
 }
 
 //A Body Bag
++MetaProp 798 "Object Randomiser  - Only Hypos"
 +Link 798 "SargeMedSci1RandomInput" "Target"
 {
 }
 
 //A Body Bag
++MetaProp 828 "Object Randomiser  - Only Hypos"
 +Link 828 "SargeMedSci1RandomInput" "Target"
 {
 }
 
 //A Body Bag
++MetaProp 684 "Object Randomiser  - Only Hypos"
 +Link 684 "SargeMedSci1RandomInput" "Target"
 {
 }
@@ -402,9 +407,6 @@ Create "sargeRandomiserAreaHandler" "SargeMedSci1RandomInput"
 ////Create various markers on gurneys, shelves and other areas
 
 //Dr Watts room gurneys
-+Link "SargeRandomWattsRoomOutput" "SargeMedSci1RandomInput" "Target"
-{
-}
 Create "sargeRandomiserOutput" "SargeRandomWattsRoomOutput2"
 {
 	+ObjProp "Position"

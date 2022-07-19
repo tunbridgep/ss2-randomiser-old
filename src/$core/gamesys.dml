@@ -1,5 +1,9 @@
 DML1
 
+
+// DELETE THESE!!!
+
+
 //Attach this to an item and then link outputs to it for a quick, easy randomiser.
 CreateArch "Misc Metaprops" "Object Randomiser"
 {
@@ -26,7 +30,10 @@ CreateArch "Object Randomiser Output" "Object Randomiser Output Container"
 	+ObjProp "DesignNoteSS" = "sargeContainer=[me];"
 }
 
-//Output for the randomiser system, this is usually positional
+
+// END DELETE THESE!
+
+//Output for the randomiser system, this is usually to define a marker position
 CreateArch "Marker" "sargeRandomiserOutput"
 {
 	+ObjProp "Scripts"
@@ -46,4 +53,16 @@ CreateArch "Marker" "sargeRandomiserAreaHandler"
 		"Script 0" "sargeRandomiserAreaHandler"
 		"Don't inherit" false
 	}
+}
+
+////Metaprops to control item distribution. These don't do anything on their own, but signal to the Randomiser that certain things should be done with a given object
+
+//Prevent a container from having more than 1 of a certain item (used for wrench guy at the start of the game)
+CreateArch "Misc Metaprops" "Object Randomiser  - No Duplicates"
+{
+}
+
+//Allow a container to have only hypos added to it (used for body bags)
+CreateArch "Misc Metaprops" "Object Randomiser  - Only Hypos"
+{
 }
