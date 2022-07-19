@@ -5,7 +5,7 @@
 +MetaProp 1133 "Object Randomiser"
 
 ////Move to desk in crew quarters room 2 doors to the left of restroom
-Create "sargeRandomiserOutput" "CoolOutput"
+Create "Marker" "CoolOutput"
 {
 	+ObjProp "Position"
 	{
@@ -22,7 +22,7 @@ Create "sargeRandomiserOutput" "CoolOutput"
 
 /*
 ////Move to desk in crew quarters upstairs room
-Create "sargeRandomiserOutput"
+Create "Marker"
 {
 	+ObjProp "Position"
 	{
@@ -37,7 +37,7 @@ Create "sargeRandomiserOutput"
 */
 
 ////Move to corpse outside crew quarters upstairs room
-Create "sargeRandomiserOutput"
+Create "Marker"
 {
 	+ObjProp "Position"
 	{
@@ -51,7 +51,7 @@ Create "sargeRandomiserOutput"
 }
 
 ////Move to triop crate inside cafeteria in crew quarters
-Create "sargeRandomiserOutput"
+Create "Marker"
 {
 	+ObjProp "Position"
 	{
@@ -65,7 +65,7 @@ Create "sargeRandomiserOutput"
 }
 
 ////Move near dead guy in ceiling area near Watts office
-Create "sargeRandomiserOutput"
+Create "Marker"
 {
 	+ObjProp "Position"
 	{
@@ -79,7 +79,7 @@ Create "sargeRandomiserOutput"
 }
 
 ////Move into weird back room in first room in Crew Quarters
-Create "sargeRandomiserOutput"
+Create "Marker"
 {
 	+ObjProp "Position"
 	{
@@ -99,7 +99,7 @@ Create "sargeRandomiserOutput"
 +MetaProp 1431 "Object Randomiser"
 
 ////Move to desk in the security room with the armour
-Create "sargeRandomiserOutput"
+Create "Marker"
 {
 	+ObjProp "Position"
 	{
@@ -113,7 +113,7 @@ Create "sargeRandomiserOutput"
 }
 
 ////Move to monitors near Armoury
-Create "sargeRandomiserOutput"
+Create "Marker"
 {
 	+ObjProp "Position"
 	{
@@ -127,7 +127,7 @@ Create "sargeRandomiserOutput"
 }
 
 ////Move to broken door quarters in crew quarters
-Create "sargeRandomiserOutput"
+Create "Marker"
 {
 	+ObjProp "Position"
 	{

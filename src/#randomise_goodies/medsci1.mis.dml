@@ -2,25 +2,6 @@
 // Cryo Recovery Suite.
 // ================================================================================
 
-////Create a randomiser
-Create "sargeRandomiserAreaHandler" "SargeCryoRandomInput"
-{
-	+ObjProp "Position"
-	{
-		"Location" "56.0821, -95.0993, -15"
-		"Heading" 0
-		"Pitch" 0
-		"Bank" 0
-	}
-}
-
-////Add some items to it
-
-//Audio Log on top of Crate
-+Link 267 "SargeCryoRandomInput" "Target"
-{
-}
-
 //Wrench in Power Recharge room
 +Link 1707 "SargeCryoRandomInput" "Target"
 {
@@ -29,7 +10,6 @@ Create "sargeRandomiserAreaHandler" "SargeCryoRandomInput"
 //And some other containers to manage
 
 //Cryo Code guy (12451)
-+MetaProp 1608 "Object Randomiser - Dont Strip" //1608 vs 1680 is not a typo. 1608 is the log he carries.
 +Link 1680 "SargeCryoRandomInput" "Target"
 {
 }
@@ -94,23 +74,8 @@ Create "sargeRandomiserAreaHandler" "SargeCryoRandomInput"
 {
 }
 
-//Create a marker to spawn items at, on top of the crate where the audio log was
-Create "sargeRandomiserOutput" "SargeRandomOnTopOfCrateOutput"
-{
-	+ObjProp "Position"
-	{
-		"Location" "62.8792, -166.147, -15.5756"
-		"Heading" 1555
-		"Pitch" 0
-		"Bank" 0
-	}
-}
-+Link "SargeRandomOnTopOfCrateOutput" "SargeCryoRandomInput" "Target"
-{
-}
-
 //Create a marker to spawn items at, inside the smashable glass section
-Create "sargeRandomiserOutput" "SargeRandomCryoSmashableOutput"
+Create "Marker" "SargeRandomCryoSmashableOutput"
 {
 	+ObjProp "Position"
 	{
@@ -125,7 +90,7 @@ Create "sargeRandomiserOutput" "SargeRandomCryoSmashableOutput"
 }
 
 //Create a marker to spawn items at, where the floor hypo used to be (the room with the ramp and the exploding computer)
-Create "sargeRandomiserOutput" "SargeRandomCryoFloorSpot"
+Create "Marker" "SargeRandomCryoFloorSpot"
 {
 	+ObjProp "Position"
 	{
@@ -143,20 +108,6 @@ Create "sargeRandomiserOutput" "SargeRandomCryoFloorSpot"
 // Science Sector
 // Note: We separate the "normal" loot from the "special" (2 hack crates) loot by using 2 separate loot manager object
 // ================================================================================
-
-////Create a randomiser
-Create "sargeRandomiserAreaHandler" "SargeMedSci1RandomInput"
-{
-	+ObjProp "Position"
-	{
-		"Location" "-9.36382, -149.547, -0.85719"
-		"Heading" 0
-		"Pitch" 0
-		"Bank" 0
-	}
-}
-
-////Add some items to it
 
 //A Desk
 +Link 258 "SargeMedSci1RandomInput" "Target"
@@ -257,7 +208,7 @@ Create "sargeRandomiserAreaHandler" "SargeMedSci1RandomInput"
 ////Corpses
 
 
-//Shotgun guy.
+//Shotgun guy
 +Link 967 "SargeMedSci1RandomInput" "Target"
 {
 }
@@ -438,42 +389,10 @@ Create "sargeRandomiserAreaHandler" "SargeMedSci1RandomInput"
 {
 }
 
-////Audio Logs
-//Morgue
-+Link 1338 "SargeMedSci1RandomInput" "Target"
-{
-}
-
-//Table in R&D
-+Link 253 "SargeMedSci1RandomInput" "Target"
-{
-}
-
-//Char in Xerxes core
-+Link 242 "SargeMedSci1RandomInput" "Target"
-{
-}
-
-//Gurney near R&D
-+Link 268 "SargeMedSci1RandomInput" "Target"
-{
-}
-
-//Medical Lobby Bench
-+Link 270 "SargeMedSci1RandomInput" "Target"
-{
-}
-
-//Medical Lobby Bench
-+Link 270 "SargeMedSci1RandomInput" "Target"
-{
-}
-
-
 ////Create various markers on gurneys, shelves and other areas
 
 //On the floor near the first power charger (with the turrets)
-Create "sargeRandomiserOutput" "SargeRechargerInput"
+Create "Marker" "SargeRechargerInput"
 {
 	+ObjProp "Position"
 	{
@@ -488,7 +407,7 @@ Create "sargeRandomiserOutput" "SargeRechargerInput"
 }
 
 //Dr Watts room gurneys
-Create "sargeRandomiserOutput" "SargeRandomWattsRoomOutput2"
+Create "Marker" "SargeRandomWattsRoomOutput2"
 {
 	+ObjProp "Position"
 	{
@@ -501,7 +420,7 @@ Create "sargeRandomiserOutput" "SargeRandomWattsRoomOutput2"
 +Link "SargeRandomWattsRoomOutput2" "SargeMedSci1RandomInput" "Target"
 {
 }
-Create "sargeRandomiserOutput" "SargeRandomWattsRoomOutput3"
+Create "Marker" "SargeRandomWattsRoomOutput3"
 {
 	+ObjProp "Position"
 	{
@@ -516,7 +435,7 @@ Create "sargeRandomiserOutput" "SargeRandomWattsRoomOutput3"
 }
 
 //Table in R&D Room with power charger
-Create "sargeRandomiserOutput" "SargeRandomRandDPowerRoomDesk"
+Create "Marker" "SargeRandomRandDPowerRoomDesk"
 {
 	+ObjProp "Position"
 	{
@@ -530,7 +449,7 @@ Create "sargeRandomiserOutput" "SargeRandomRandDPowerRoomDesk"
 {
 }
 //Table in R&D Room with power charger
-Create "sargeRandomiserOutput" "SargeRandomRandDPowerRoomDesk2"
+Create "Marker" "SargeRandomRandDPowerRoomDesk2"
 {
 	+ObjProp "Position"
 	{
@@ -544,7 +463,7 @@ Create "sargeRandomiserOutput" "SargeRandomRandDPowerRoomDesk2"
 {
 }
 //Table in R&D Room with power charger
-Create "sargeRandomiserOutput" "SargeRandomRandDPowerRoomDesk3"
+Create "Marker" "SargeRandomRandDPowerRoomDesk3"
 {
 	+ObjProp "Position"
 	{
@@ -557,23 +476,10 @@ Create "sargeRandomiserOutput" "SargeRandomRandDPowerRoomDesk3"
 +Link "SargeRandomRandDPowerRoomDesk3" "SargeMedSci1RandomInput" "Target"
 {
 }
-//Table in R&D Room with power charger
-Create "sargeRandomiserOutput" "SargeRandomRandDPowerRoomDesk4"
-{
-	+ObjProp "Position"
-	{
-		"Location" "-11.8534, 109.565, -8.42286"
-		"Heading" f639
-		"Pitch" 0
-		"Bank" 0
-	}
-}
-+Link "SargeRandomRandDPowerRoomDesk4" "SargeMedSci1RandomInput" "Target"
-{
-}
+
 
 //Gurney in main R&D Hallway
-Create "sargeRandomiserOutput" "SargeRandomRandDHallway1"
+Create "Marker" "SargeRandomRandDHallway1"
 {
 	+ObjProp "Position"
 	{
@@ -588,7 +494,7 @@ Create "sargeRandomiserOutput" "SargeRandomRandDHallway1"
 }
 
 //Bench in small area with trashcan and observation window to Watts lab
-Create "sargeRandomiserOutput" "SargeRandomObservationRoom"
+Create "Marker" "SargeRandomObservationRoom"
 {
 	+ObjProp "Position"
 	{
@@ -603,7 +509,7 @@ Create "sargeRandomiserOutput" "SargeRandomObservationRoom"
 }
 
 //Desk in trap room
-Create "sargeRandomiserOutput" "SargeRandomTrapRoomDesk"
+Create "Marker" "SargeRandomTrapRoomDesk"
 {
 	+ObjProp "Position"
 	{
@@ -617,7 +523,7 @@ Create "sargeRandomiserOutput" "SargeRandomTrapRoomDesk"
 {
 }
 //Desk in trap room
-Create "sargeRandomiserOutput" "SargeRandomTrapRoomDesk2"
+Create "Marker" "SargeRandomTrapRoomDesk2"
 {
 	+ObjProp "Position"
 	{
@@ -631,7 +537,7 @@ Create "sargeRandomiserOutput" "SargeRandomTrapRoomDesk2"
 {
 }
 //Trap room grating area
-Create "sargeRandomiserOutput" "SargeRandomTrapRoomGrating"
+Create "Marker" "SargeRandomTrapRoomGrating"
 {
 	+ObjProp "Position"
 	{
@@ -644,8 +550,9 @@ Create "sargeRandomiserOutput" "SargeRandomTrapRoomGrating"
 +Link "SargeRandomTrapRoomGrating" "SargeMedSci1RandomInput" "Target"
 {
 }
+/*
 //Trap room floor area
-Create "sargeRandomiserOutput" "SargeRandomTrapRoomFloor"
+Create "Marker" "SargeRandomTrapRoomFloor"
 {
 	+ObjProp "Position"
 	{
@@ -658,9 +565,10 @@ Create "sargeRandomiserOutput" "SargeRandomTrapRoomFloor"
 +Link "SargeRandomTrapRoomFloor" "SargeMedSci1RandomInput" "Target"
 {
 }
+*/
 
 //Security Room closet desk
-Create "sargeRandomiserOutput" "SargeRandomSecurityRoomClosetDesk"
+Create "Marker" "SargeRandomSecurityRoomClosetDesk"
 {
 	+ObjProp "Position"
 	{
@@ -674,8 +582,9 @@ Create "sargeRandomiserOutput" "SargeRandomSecurityRoomClosetDesk"
 {
 }
 
+
 //Medical lobby desk
-Create "sargeRandomiserOutput" "SargeRandomMedicalLobbyDesk"
+Create "Marker" "SargeRandomMedicalLobbyDesk"
 {
 	+ObjProp "Position"
 	{
@@ -688,8 +597,7 @@ Create "sargeRandomiserOutput" "SargeRandomMedicalLobbyDesk"
 +Link "SargeRandomMedicalLobbyDesk" "SargeMedSci1RandomInput" "Target"
 {
 }
-//Medical lobby desk
-Create "sargeRandomiserOutput" "SargeRandomMedicalLobbyDesk2"
+Create "Marker" "SargeRandomMedicalLobbyDesk2"
 {
 	+ObjProp "Position"
 	{
@@ -702,8 +610,7 @@ Create "sargeRandomiserOutput" "SargeRandomMedicalLobbyDesk2"
 +Link "SargeRandomMedicalLobbyDesk2" "SargeMedSci1RandomInput" "Target"
 {
 }
-//Medical lobby desk
-Create "sargeRandomiserOutput" "SargeRandomMedicalLobbyDesk3"
+Create "Marker" "SargeRandomMedicalLobbyDesk3"
 {
 	+ObjProp "Position"
 	{
@@ -716,8 +623,9 @@ Create "sargeRandomiserOutput" "SargeRandomMedicalLobbyDesk3"
 +Link "SargeRandomMedicalLobbyDesk3" "SargeMedSci1RandomInput" "Target"
 {
 }
+
 //Medical lobby nook above the desk
-Create "sargeRandomiserOutput" "SargeRandomMedicalLobbyDesk4"
+Create "Marker" "SargeRandomMedicalLobbyDesk4"
 {
 	+ObjProp "Position"
 	{
@@ -732,7 +640,7 @@ Create "sargeRandomiserOutput" "SargeRandomMedicalLobbyDesk4"
 }
 
 //Chair in the main Xerxes room
-Create "sargeRandomiserOutput" "SargeRandomXerxesChair"
+Create "Marker" "SargeRandomXerxesChair"
 {
 	+ObjProp "Position"
 	{
@@ -747,7 +655,7 @@ Create "sargeRandomiserOutput" "SargeRandomXerxesChair"
 }
 
 //Gurney in the Morgue
-Create "sargeRandomiserOutput" "SargeRandomMorgueGurney"
+Create "Marker" "SargeRandomMorgueGurney"
 {
 	+ObjProp "Position"
 	{
@@ -762,7 +670,7 @@ Create "sargeRandomiserOutput" "SargeRandomMorgueGurney"
 }
 
 //Computer Room near R&D
-Create "sargeRandomiserOutput" "SargeRandomComputerRoom"
+Create "Marker" "SargeRandomComputerRoom"
 {
 	+ObjProp "Position"
 	{
@@ -777,7 +685,7 @@ Create "sargeRandomiserOutput" "SargeRandomComputerRoom"
 }
 
 //Chemical Storeroom
-Create "sargeRandomiserOutput" "SargeRandomChemicalStoreroom"
+Create "Marker" "SargeRandomChemicalStoreroom"
 {
 	+ObjProp "Position"
 	{
@@ -792,7 +700,7 @@ Create "sargeRandomiserOutput" "SargeRandomChemicalStoreroom"
 }
 
 //On top of box in turret/recharger room
-Create "sargeRandomiserOutput" "SargeRandomTurretRoomBox"
+Create "Marker" "SargeRandomTurretRoomBox"
 {
 	+ObjProp "Position"
 	{
@@ -811,7 +719,8 @@ Create "sargeRandomiserOutput" "SargeRandomTurretRoomBox"
 // Note: We separate the "normal" loot from the "special" (2 hack crates) loot by using 2 separate loot manager object
 // ================================================================================
 
-////Create a randomiser
+//Special Randomiser
+//This is mainly used by Hack Crates so that their loot doesn't get mixed with the general level loot.
 Create "sargeRandomiserAreaHandler" "SargeMedSci1RandomInputSpecial"
 {
 	+ObjProp "Position"
@@ -841,7 +750,7 @@ Create "sargeRandomiserAreaHandler" "SargeMedSci1RandomInputSpecial"
 }
 
 //Behind the ramp turret
-Create "sargeRandomiserOutput" "SargeRandomRampTurret"
+Create "Marker" "SargeRandomRampTurret"
 {
 	+ObjProp "Position"
 	{
@@ -869,7 +778,7 @@ Create "sargeRandomiserOutput" "SargeRandomRampTurret"
 }
 
 //Create a marker to allow small things to spawn above the turret ramp
-Create "sargeRandomiserOutput" "SargeTurretNookInput"
+Create "Marker" "SargeTurretNookInput"
 {
 	+ObjProp "Position"
 	{

@@ -1,0 +1,80 @@
+// ================================================================================
+// Audio Logs
+// ================================================================================
+
+///Don't add Quest Related logs 1608 and 251
+
+////Audio Logs
+//Morgue
++Link 1338 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Table in R&D
++Link 253 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Char in Xerxes core
++Link 242 "SargeMedSci1RandomInput" "Target"
+{
+}
+
++Link 251 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Gurney near R&D
++Link 268 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Medical Lobby Bench
++Link 270 "SargeMedSci1RandomInput" "Target"
+{
+}
+
++Link 926 "SargeMedSci1RandomInput" "Target"
+{
+}
+
++Link 914 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Audio Log on top of Crate
++Link 267 "SargeCryoRandomInput" "Target"
+{
+}
+
+////Create new spawning positions based on removed logs
+
+//Create a marker to spawn items at, on top of the crate where the audio log was
+Create "Marker" "SargeRandomOnTopOfCrateOutput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "62.8792, -166.147, -15.5756"
+		"Heading" 1555
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomOnTopOfCrateOutput" "SargeCryoRandomInput" "Target"
+{
+}
+
+//Table in R&D Room with power charger
+Create "Marker" "SargeRandomRandDPowerRoomDesk4"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-11.8534, 109.565, -8.42286"
+		"Heading" f639
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomRandDPowerRoomDesk4" "SargeMedSci1RandomInput" "Target"
+{
+}

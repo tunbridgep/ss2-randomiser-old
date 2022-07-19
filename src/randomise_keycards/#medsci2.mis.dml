@@ -6,7 +6,7 @@
 +MetaProp 105 "Object Randomiser"
 
 ////Near the turret outside the biopsy lab
-Create "sargeRandomiserOutput"
+Create "Marker"
 {
 	+ObjProp "Position"
 	{
@@ -20,7 +20,7 @@ Create "sargeRandomiserOutput"
 }
 
 ////In the radiation room near the Biopsy lab
-Create "sargeRandomiserOutput"
+Create "Marker"
 {
 	+ObjProp "Position"
 	{
@@ -37,7 +37,7 @@ Create "sargeRandomiserOutput"
 +MetaProp 1904 "Object Randomiser"
 
 ////Near the turret outside the biopsy lab
-Create "sargeRandomiserOutput"
+Create "Marker"
 {
 	+ObjProp "Position"
 	{
@@ -61,7 +61,7 @@ Create "sargeRandomiserOutput"
 +ObjProp 772 "DesignNoteSS" = "sargeInputItem0=[me]; sargeInputItem1=828"
 
 ////On top of Dr Watts Desk
-Create "sargeRandomiserOutput"
+Create "Marker"
 {
 	+ObjProp "Position"
 	{
@@ -75,7 +75,7 @@ Create "sargeRandomiserOutput"
 }
 
 ////On Dr Watts Desk shelf
-Create "sargeRandomiserOutput"
+Create "Marker"
 {
 	+ObjProp "Position"
 	{

@@ -1,9 +1,7 @@
 DML1
 
 
-// DELETE THESE!!!
-
-
+/*
 //Attach this to an item and then link outputs to it for a quick, easy randomiser.
 CreateArch "Misc Metaprops" "Object Randomiser"
 {
@@ -31,8 +29,6 @@ CreateArch "Object Randomiser Output" "Object Randomiser Output Container"
 }
 
 
-// END DELETE THESE!
-
 //Output for the randomiser system, this is usually to define a marker position
 CreateArch "Marker" "sargeRandomiserOutput"
 {
@@ -44,6 +40,8 @@ CreateArch "Marker" "sargeRandomiserOutput"
 		"Don't inherit" false
 	}
 }
+
+*/
 
 //Input for the mass loot system. It's "neater" to use a marker as an input or output when we are dealing with many objects
 CreateArch "Marker" "sargeRandomiserAreaHandler"

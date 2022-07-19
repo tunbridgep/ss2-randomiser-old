@@ -2,10 +2,21 @@
 // Cryo A Keycard - 1050
 // ================================================================================
 
-+MetaProp 1050 "Object Randomiser"
+//Randomiser
+Create "sargeRandomiserAreaHandler" "SargeCryoKeycardInput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "60.8544, -3.50372, -3.69828"
+		"Heading" 0
+		"Pitch" 0
+		"Bank" 0
+	}
+	+ObjProp "DesignNoteSS" = "useCurrentPositions=true;"
+}
 
 ////On the table
-Create "sargeRandomiserOutput" "SargeRandomCryoKeycardOutput1"
+Create "Marker" "SargeRandomCryoKeycardOutput1"
 {
 	+ObjProp "Position"
 	{
@@ -14,10 +25,14 @@ Create "sargeRandomiserOutput" "SargeRandomCryoKeycardOutput1"
 		"Pitch" 0
 		"Bank" 0
 	}	
-	+ObjProp "DesignNoteSS" = "sargeDisablePhysics=true;"
+}
++MetaProp "SargeRandomCryoKeycardOutput1" "Object Randomiser - Disable Physics"
+
++Link "SargeRandomCryoKeycardOutput1" "SargeCryoKeycardInput" "Target"
+{
 }
 
-+Link 1050 "SargeRandomCryoKeycardOutput1" "~Target"
++Link 1050 "SargeCryoKeycardInput" "Target"
 {
 }
 
@@ -25,25 +40,31 @@ Create "sargeRandomiserOutput" "SargeRandomCryoKeycardOutput1"
 // Science Sector Keycard - 338
 // ================================================================================
 
-+MetaProp 338 "Object Randomiser"
-
-////Opposite Room Location, near the other Cryo chambers, on a computer terminal
-Create "sargeRandomiserOutput" "SargeRandomScienceKeycardOutput1"
+//Randomiser
+Create "sargeRandomiserAreaHandler" "SargeScienceKeycardInput"
 {
 	+ObjProp "Position"
 	{
 		"Location" "51.6116, -105.93, -0.24"
-		"Heading" f100
+		"Heading" 0
 		"Pitch" 0
 		"Bank" 0
 	}
+	+ObjProp "DesignNoteSS" = "useCurrentPositions=true; noAutoAddInventory=true;"
 }
-+Link 338 "SargeRandomScienceKeycardOutput1" "~Target"
+
+//Box immediately after exiting the airlock
++Link 910 "SargeScienceKeycardInput" "Target"
+{
+}
+
+////In a crate on the lower level
++Link 338 "SargeScienceKeycardInput" "Target"
 {
 }
 
 ////Near the locked door to Science Sector (with the ghost)
-Create "sargeRandomiserOutput" "SargeRandomScienceKeycardOutput2"
+Create "Marker" "SargeRandomScienceKeycardOutput1"
 {
 	+ObjProp "Position"
 	{
@@ -53,12 +74,6 @@ Create "sargeRandomiserOutput" "SargeRandomScienceKeycardOutput2"
 		"Bank" 0
 	}
 }
-+Link 338 "SargeRandomScienceKeycardOutput2" "~Target"
-{
-}
-
-////In a crate on the lower level
-+MetaProp 105 "Object Randomiser Output Container"
-+Link 338 105 "~Target"
++Link "SargeRandomScienceKeycardOutput1" "SargeScienceKeycardInput" "Target"
 {
 }

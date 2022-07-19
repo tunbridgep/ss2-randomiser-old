@@ -13,3 +13,32 @@ FINGERPRINT
    476 [128.1 61.64 -2]
    365 [127.73 57.51 -2]
 }
+
+// ================================================================================
+// Randomisers
+// ================================================================================
+
+//Cryo Recovery Suite
+Create "sargeRandomiserAreaHandler" "SargeCryoRandomInput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "56.0821, -95.0993, -15"
+		"Heading" 0
+		"Pitch" 0
+		"Bank" 0
+	}
+}
+
+//MedSci1 General
+//Note: We separate the "normal" loot from the "special" (2 hack crates) loot by using 2 separate loot manager objects
+Create "sargeRandomiserAreaHandler" "SargeMedSci1RandomInput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-9.36382, -149.547, -0.85719"
+		"Heading" 0
+		"Pitch" 0
+		"Bank" 0
+	}
+}

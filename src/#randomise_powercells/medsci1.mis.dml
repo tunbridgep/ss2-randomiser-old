@@ -5,7 +5,7 @@
 +MetaProp 1767 "Object Randomiser"
 
 ////Near the wrench under collapsed wall
-Create "sargeRandomiserOutput" "SargeRandomMedsciPowercell1Output1"
+Create "Marker" "SargeRandomMedsciPowercell1Output1"
 {
 	+ObjProp "Position"
 	{
@@ -45,7 +45,7 @@ Create "sargeRandomiserOutput" "SargeRandomMedsciPowercell1Output1"
 
 /*
 ////In the corner of the morgue on the top level
-Create "sargeRandomiserOutput" "SargeRandomMedsciPowercell2Output1"
+Create "Marker" "SargeRandomMedsciPowercell2Output1"
 {
 	+ObjProp "Position"
 	{

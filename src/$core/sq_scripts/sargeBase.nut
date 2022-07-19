@@ -84,7 +84,7 @@ class sargeBase extends SqRootScript
 		print ("object " + item + " moved to container " + container);
 	}
 	
-	function MoveObjectToPos(item,position,disablePhysics,shouldClone)
+	function MoveObjectToPos(item,position,facingoffset,disablePhysics,shouldClone)
 	{
 		local debugString = "object " + item + " ";
 	
@@ -97,7 +97,7 @@ class sargeBase extends SqRootScript
 		}
 		
 		local pos = Object.Position(position);
-		local facing = Object.Facing(position)
+		local facing = Object.Facing(position) + facingoffset;
 		
 		Object.Teleport(item, pos, facing);
 		
@@ -113,6 +113,13 @@ class sargeBase extends SqRootScript
 		print (debugString);
 	}
 	
+	//Creates a marker at a specified position
+	function CreateMarker(position,heading)
+	{
+		local marker = Object.Create(-327);
+		Object.Teleport(marker, position, heading);
+		return marker;
+	}
 	
 	//overwrite this
 	function Init()

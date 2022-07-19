@@ -19,6 +19,11 @@ class sargeRandomiserAreaHandler extends sargeBase
 	//useful when moving things like bodies or crates around
 	unsafe = null;
 	
+	//For each object that is linked to the input, add their original location as a possible output
+	//(Objects in the world only)
+	//This is mainly used when randomising specific items when the goal is for them to be able to also spawn at their original location
+	useLocations = null;
+	
 	//Make sure every possible output is processed before processing any a second time
 	//This stops the "clumping up" of some items onto outputs, which leads to a decent number of empty outputs as well
 	//This is mainly used for things like hackable crates to ensure that every crate always gets at least some loot, and it's less clumped
@@ -29,15 +34,16 @@ class sargeRandomiserAreaHandler extends sargeBase
 	//readonly = false;
 	
 	//useful when you want to add various specific linked items to certain inventories, such as power cells, without having any items taken
-	//writeonly = false;
+	writeonly = false;
 	
 	//These won't be automatically picked up from inventories
+	//Unless unsafe is set.
 	//But we can still manually link them
-	//Unless unsafe is set
 	static dontModify = [
 		
 		-1461,	//Plot Item
 		-156,	//key
+		-76,	//audio logs
 		//-928,	//Wrench
 		-12,	//Weapon
 		-78,	//Armor
@@ -56,19 +62,25 @@ class sargeRandomiserAreaHandler extends sargeBase
 		
 		unsafe = getParam("allowUnsafe",false);
 		fairDistribution = getParam("fairDistribution",false);
+		useLocations = getParam("useCurrentPositions",false);
+		writeonly = getParam("noAutoAddInventory",false);
 		
-		print ("fair distribution: " + fairDistribution);
-		
+		print ("writeonly:" + writeonly);
+			
 		ProcessTargets();
-		
+				
 		if (outputs.len() > 0 && inputs.len() > 0)
 		{
 			RandomiseItems();
 		}
+		else if (outputs.len() == 0)
+		{
+			print("Randomiser Error: No outputs defined ("+ ShockGame.GetArchetypeName(self) + ")");
+		}
 		else
 		{
-			print("Randomiser Error: No inputs or outputs defined");
-		}		
+			print("Randomiser Error: No inputs defined ("+ ShockGame.GetArchetypeName(self) + ")");
+		}
 	}
 	
 	//Adds each item from the input array to a corresponding output.
@@ -116,7 +128,7 @@ class sargeRandomiserAreaHandler extends sargeBase
 		}
 		return -1;
 	}
-	
+		
 	//Actually perform the item placement
 	function HandleOutput(input,output)
 	{
@@ -126,7 +138,7 @@ class sargeRandomiserAreaHandler extends sargeBase
 		if (output[OBJECT_TYPE] == IS_MARKER)
 		{
 			local disablePhysics = Object.HasMetaProperty(output[OBJECT],"Object Randomiser - Disable Physics");
-			MoveObjectToPos(item,output[OBJECT],disablePhysics,IsContained(item));
+			MoveObjectToPos(item,output[OBJECT],0,disablePhysics,IsContained(item));
 		}
 		else if (output[OBJECT_TYPE] == IS_CONTAINER || output[OBJECT_TYPE] == IS_CORPSE)
 		{
@@ -140,8 +152,7 @@ class sargeRandomiserAreaHandler extends sargeBase
 	//only runs when auto-randomising containers and inventories,
 	function IsInputValid(item,owner)
 	{
-		//Prevent Stripping of Logs, Keys, etc.
-		//Designed to preserve progression items
+		//Prevent stripping of various items
 		if (Object.HasMetaProperty(item,"Object Randomiser - Dont Strip"))
 		{
 			return false;
@@ -199,25 +210,33 @@ class sargeRandomiserAreaHandler extends sargeBase
 		local isMarker = Object.InheritsFrom(processing, "Marker");
 		local isContainer = Object.InheritsFrom(processing, -118);
 		local isCorpse = Object.InheritsFrom(processing, -379);
-		local isInventoryItem = Property.Get(processing, "InvDims","Width");
+		local isInventoryItem = Property.Get(processing, "InvDims","Width") || Object.InheritsFrom(processing, -157);
 				
 		if (isMarker)
 		{
 			outputs.append([processing,IS_MARKER]);
 		}
 		else if (isContainer)
-		{		
-			ProcessInventory(processing);
+		{
+			if (!writeonly)
+				ProcessInventory(processing);
 			outputs.append([processing,IS_CONTAINER]);
 		}
 		else if (isCorpse)
 		{
-			ProcessInventory(processing);
+			if (!writeonly)
+				ProcessInventory(processing);
 			outputs.append([processing,IS_CORPSE]);
 		}
 		else if (isInventoryItem) //Not a container or a marker, it must be some other item.
 		{
 			inputs.append([processing,IS_INVENTORY_ITEM]);
+			if (useLocations && !IsContained(processing))
+			{
+				print ("Using local locations... Adding marker");
+				local marker = CreateMarker(Object.Position(processing),Object.Facing(processing));
+				ProcessObject(marker);
+			}
 		}
 		else if (unsafe)
 		{
