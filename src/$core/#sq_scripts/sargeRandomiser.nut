@@ -2,11 +2,29 @@
 // Anything linked as a target will, if it's a marker, become an output.
 // If it's a container, it will become an output and it's contents will become inputs
 // If it's just an item, it will become an input
-class sargeRandomiserAreaHandler extends sargeBase
+class sargeRandomiser extends sargeBase
 {
+	//These won't be automatically picked up from inventories
+	//Unless unsafe is set.
+	//But we can still manually link them
+	static dontModify = [
+		
+		-1461,	//Plot Item
+		-156,	//key
+		-76,	//audio logs
+		//-928,	//Wrench
+		-12,	//Weapon
+		-78,	//Armor
+		-99,	//Implants
+		-218,	//Organs
+		-436,	//Cheeseborger
+		-71,	//Recycler
+		//-70,	//Device			
+	];
+
 	inputs = null;
 	outputs = null;
-	
+		
 	static OBJECT = 0;
 	static OBJECT_TYPE = 1;
 	
@@ -34,28 +52,13 @@ class sargeRandomiserAreaHandler extends sargeBase
 	//readonly = false;
 	
 	//useful when you want to add various specific linked items to certain inventories, such as power cells, without having any items taken
-	writeonly = false;
+	insertonly = null;
 	
-	//These won't be automatically picked up from inventories
-	//Unless unsafe is set.
-	//But we can still manually link them
-	static dontModify = [
-		
-		-1461,	//Plot Item
-		-156,	//key
-		-76,	//audio logs
-		//-928,	//Wrench
-		-12,	//Weapon
-		-78,	//Armor
-		-99,	//Implants
-		-218,	//Organs
-		-436,	//Cheeseborger
-		-71,	//Recycler
-		//-70,	//Device			
-	];
+	//Ignore certain categories of items. This won't register them as inputs OR outputs
+	ignored = null;
 	
 	function Init()
-	{
+	{	
 		//Have to do this here because squirrel is shit
 		inputs = [];
 		outputs = [];
@@ -63,9 +66,10 @@ class sargeRandomiserAreaHandler extends sargeBase
 		unsafe = getParam("allowUnsafe",false);
 		fairDistribution = getParam("fairDistribution",false);
 		useLocations = getParam("useCurrentPositions",false);
-		writeonly = getParam("noAutoAddInventory",false);
+		insertonly = getParam("noAutoAddInventory",false);
+		ignored = getParamArray("excludeObject");
 		
-		print ("writeonly:" + writeonly);
+		print ("insertonly:" + insertonly);
 			
 		ProcessTargets();
 				
@@ -82,12 +86,13 @@ class sargeRandomiserAreaHandler extends sargeBase
 			print("Randomiser Error: No inputs defined ("+ ShockGame.GetArchetypeName(self) + ")");
 		}
 	}
+
 	
 	//Adds each item from the input array to a corresponding output.
 	function RandomiseItems()
 	{
-		inputs = Array_Shuffle(inputs);
-		outputs = Array_Shuffle(outputs);
+		inputs = sargeUtility.Array_Shuffle(inputs);
+		outputs = sargeUtility.Array_Shuffle(outputs);
 			
 		local currentInputInd = 0;
 		
@@ -138,11 +143,11 @@ class sargeRandomiserAreaHandler extends sargeBase
 		if (output[OBJECT_TYPE] == IS_MARKER)
 		{
 			local disablePhysics = Object.HasMetaProperty(output[OBJECT],"Object Randomiser - Disable Physics");
-			MoveObjectToPos(item,output[OBJECT],0,disablePhysics,IsContained(item));
+			sargeUtility.MoveObjectToPos(item,output[OBJECT],0,disablePhysics,sargeUtility.IsContained(item));
 		}
 		else if (output[OBJECT_TYPE] == IS_CONTAINER || output[OBJECT_TYPE] == IS_CORPSE)
 		{
-			AddItemToContainer(item,output[OBJECT]);
+			sargeUtility.AddItemToContainer(item,output[OBJECT]);
 		}
 	}
 	
@@ -174,7 +179,7 @@ class sargeRandomiserAreaHandler extends sargeBase
 		//prevent duplicate items if a container doesn't want them
 		if (Object.HasMetaProperty(output[OBJECT],"Object Randomiser - No Duplicates"))
 		{
-			if (HasItemOfType(input[OBJECT],output[OBJECT]))
+			if (sargeUtility.HasItemOfType(input[OBJECT],output[OBJECT]))
 			{
 				//print ("Has duplicate items!");
 				return false;
@@ -207,6 +212,17 @@ class sargeRandomiserAreaHandler extends sargeBase
 	//[Item, Type]
 	function ProcessObject(processing)
 	{
+		//If item is in our ignored items, don't do anything with it
+		foreach (type in ignored)
+		{
+			print ("Checking object of type " + Object.Archetype(processing) + " against ignored type " + type);
+			if (Object.InheritsFrom(processing, type) || Object.Archetype(processing) == type || processing == type)
+			{
+				print ("found type match");
+				return;
+			}
+		}
+	
 		local isMarker = Object.InheritsFrom(processing, "Marker");
 		local isContainer = Object.InheritsFrom(processing, -118);
 		local isCorpse = Object.InheritsFrom(processing, -379);
@@ -218,13 +234,13 @@ class sargeRandomiserAreaHandler extends sargeBase
 		}
 		else if (isContainer)
 		{
-			if (!writeonly)
+			if (!insertonly)
 				ProcessInventory(processing);
 			outputs.append([processing,IS_CONTAINER]);
 		}
 		else if (isCorpse)
 		{
-			if (!writeonly)
+			if (!insertonly)
 				ProcessInventory(processing);
 			outputs.append([processing,IS_CORPSE]);
 		}
@@ -262,13 +278,19 @@ class sargeRandomiserAreaHandler extends sargeBase
 		}
 	}
 	
-	//Take target links and add them to input and output arrays
+	//Take target object collections add them to input and output arrays
 	function ProcessTargets()
 	{
 		foreach (outLink in Link.GetAll(linkkind("~Target"),self))
 		{
-			local processing = sLink(outLink).dest;	
-			ProcessObject(processing);
+			local collection = sLink(outLink).dest;
+			
+			foreach (collectionLink in Link.GetAll(linkkind("~Target"),collection))
+			{
+				local processing = sLink(collectionLink).dest;	
+				print ("processing: " + processing);
+				ProcessObject(processing);
+			}
 		}
 	}
 }

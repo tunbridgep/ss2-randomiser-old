@@ -1,79 +1,69 @@
 DML1
 
+//Input for the mass loot system. Acts as a "collection" of objects,
+//based on Target links
+CreateArch "Marker" "sargeRandomiserObjectCollection"
+{
+	+ObjProp "Scripts"
+    {
+        "Script 0" "sargeItemCollection"
+        "Script 1" ""
+        "Script 2" ""
+        "Script 3" ""
+        "Don't Inherit" FALSE
+    }
+}
 
+//Takes one or more Object Collections and acts on them, based on conditions
 /*
-//Attach this to an item and then link outputs to it for a quick, easy randomiser.
-CreateArch "Misc Metaprops" "Object Randomiser"
+CreateArch "Marker" "sargeRandomiser"
 {
 	+ObjProp "Scripts"
 	{
-		"Script 0" "sargeRandomiserInput"
+		//"Script 0" "sargeRandomiser"
 		"Don't inherit" false
 	}
 }
-
-//Attach this to an item and then link outputs to it for a quick, easy container output.
-CreateArch "Misc Metaprops" "Object Randomiser Output"
-{
-	+ObjProp "Scripts"
-	{
-		"Script 0" "sargeRandomiserOutput"
-		"Don't inherit" false
-	}
-}
-
-//Attach this to a container and then link inputs to it for a quick, easy container output.
-CreateArch "Object Randomiser Output" "Object Randomiser Output Container"
-{
-	+ObjProp "DesignNoteSS" = "sargeContainer=[me];"
-}
-
-
-//Output for the randomiser system, this is usually to define a marker position
-CreateArch "Marker" "sargeRandomiserOutput"
-{
-	+ObjProp "Scripts"
-	{
-		"Script 0" "sargeRandomiserOutput"
-		//"Script 1" "NVSpy"
-		//"Script 2" "NVLinkBuilder"
-		"Don't inherit" false
-	}
-}
-
 */
 
-//Input for the mass loot system. It's "neater" to use a marker as an input or output when we are dealing with many objects
-CreateArch "Marker" "sargeRandomiserAreaHandler"
+//Acts in conjunction with a linked Object Collection, as an output
+CreateArch "Marker" "sargeRandomiserOutputMarker"
 {
 	+ObjProp "Scripts"
 	{
-		"Script 0" "sargeRandomiserAreaHandler"
+		"Script 0" "sargeOutputMarker"
+		"Don't inherit" false
+	}
+}
+
+//Attach to a container to make it act as an output. Similar to the output Marker above
+CreateArch "Misc Metaprops" "Object Randomiser - Container"
+{
+	+ObjProp "Scripts"
+	{
+		"Script 0" "sargeOutputContainer"
 		"Don't inherit" false
 	}
 }
 
 ////Metaprops to control item distribution. These don't do anything on their own, but signal to the Randomiser that certain things should be done with a given object
 
+/*
 //Prevent a container from having more than 1 of a certain item (used for wrench guy at the start of the game)
 CreateArch "Misc Metaprops" "Object Randomiser  - No Duplicates"
 {
 }
 
-//Allow an output to have only hypos added to it (used for body bags)
-CreateArch "Misc Metaprops" "Object Randomiser - Only Hypos"
-{
-}
-
-//Allow an output to have only hypos and ammo added to it (used for small nooks and psi-pull items mostly)
-CreateArch "Misc Metaprops" "Object Randomiser - Only Hypos And Ammo"
-{
-}
-
-//Disable physics on a spawned item
+//Disable physics on an output
 CreateArch "Misc Metaprops" "Object Randomiser - Disable Physics"
 {
 }
+
+//Create a Marker at the location of an input when adding it to a randomiser
+CreateArch "Misc Metaprops" "Object Randomiser - Create Marker"
+{
+}
+*/
 
 //Item won't be stripped from any inventories under any circumstances. Used for plot items, various logs, etc.
 CreateArch "Misc Metaprops" "Object Randomiser - Dont Strip"

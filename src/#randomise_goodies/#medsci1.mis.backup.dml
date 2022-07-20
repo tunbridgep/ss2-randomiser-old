@@ -1,0 +1,795 @@
+// ================================================================================
+// Cryo Recovery Suite.
+// ================================================================================
+
+//Wrench in Power Recharge room
++Link 1707 "SargeCryoRandomInput" "Target"
+{
+}
+
+//And some other containers to manage
+
+//Cryo Code guy (12451)
++Link 1680 "SargeCryoRandomInput" "Target"
+{
+}
+
+
+//Wrench Guy at the start of the game
++MetaProp 1177 "Object Randomiser  - No Duplicates"
++Link 1177 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Box immediately after exiting the airlock
++Link 910 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Corpse in downstairs computer room
++Link 831 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Corpse right next to skill trainers
++Link 490 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Crate near 00000 door with audio log on top
++Link 105 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Corpse near 00000 door
++Link 1584 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Corpse near Cryo Chambers upstairs
++Link 219 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Corpse in Computer Room Upstairs
++Link 931 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Med hypo in the upper level
++Link 234 "SargeCryoRandomInput" "Target"
+{
+}
+
+//"Floor nanites" near the door to Sci
++Link 1505 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Add the 2 items from the computer station smashable glass area
++Link 607 "SargeCryoRandomInput" "Target"
+{
+}
++Link 599 "SargeCryoRandomInput" "Target"
+{
+}
+
+//Create a marker to spawn items at, inside the smashable glass section
+Create "Marker" "SargeRandomCryoSmashableOutput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "42.7551, -163.693, 5.39923"
+		"Heading" d134
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomCryoSmashableOutput" "SargeCryoRandomInput" "Target"
+{
+}
+
+//Create a marker to spawn items at, where the floor hypo used to be (the room with the ramp and the exploding computer)
+Create "Marker" "SargeRandomCryoFloorSpot"
+{
+	+ObjProp "Position"
+	{
+		"Location" "58.015, -158.769, -3.55719"
+		"Heading" 0
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomCryoFloorSpot" "SargeCryoRandomInput" "Target"
+{
+}
+
+// ================================================================================
+// Science Sector
+// Note: We separate the "normal" loot from the "special" (2 hack crates) loot by using 2 separate loot manager object
+// ================================================================================
+
+//A Desk
++Link 258 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Desk
++Link 533 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Desk
++Link 483 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Desk
++Link 1071 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Desk
++Link 915 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Desk
++Link 1391 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Crate
++Link 525 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Crate
++Link 562 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Crate
++Link 565 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Crate
++Link 1432 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Crate
++Link 893 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Crate
++Link 900 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Crate
++Link 976 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Trashcan
++Link 1796 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+////Morgue
+
+//A Body Bag
++MetaProp 794 "Object Randomiser - Only Hypos"
++Link 794 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Body Bag
++MetaProp 798 "Object Randomiser - Only Hypos"
++Link 798 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Body Bag
++MetaProp 828 "Object Randomiser - Only Hypos"
++Link 828 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Body Bag
++MetaProp 684 "Object Randomiser - Only Hypos"
++Link 684 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+////Corpses
+
+
+//Shotgun guy
++Link 967 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 1182 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 1362 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 1351 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 880 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+/*
+//Hanging guy
++Link 735 "SargeMedSci1RandomInput" "Target"
+{
+}
+*/
+
+//A Corpse
++Link 833 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 294 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 1095 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 165 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 1153 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 507 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 781 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 1428 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 702 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 867 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 998 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Corpse
++Link 492 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+
+
+////Randomise hand-placed "in world" items not in containers
+
+
+
+
+//A bag of chips
++Link 551 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A bottle of booze
++Link 549 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A bottle of vodka
++Link 1425 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A bottle of vodka
++Link 997 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Two rad patches
++Link 438 "SargeMedSci1RandomInput" "Target"
+{
+}
++Link 835 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Some floor nanites in the main Xerxes area
++Link 871 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Some AP Ammo
++Link 225 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Some Regular Ammo
++Link 79 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Psi Hypo
++Link 159 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Med Hypo
++Link 1113 "SargeMedSci1RandomInput" "Target"
+{
+}
+//A Med Hypo
++Link 114 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//A Pistol
++Link 1363 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Some Juice
++Link 297 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Some Pistol Bullets
++Link 1343 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Some Pistol Bullets
++Link 1345 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Nanites near recharding station
++Link 1665 "SargeMedSci1RandomInput" "Target"
+{
+}
+
+////Create various markers on gurneys, shelves and other areas
+
+//On the floor near the first power charger (with the turrets)
+Create "Marker" "SargeRechargerInput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "2.54925, -25.0458, -13.2326"
+		"Heading" 0
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRechargerInput" "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Dr Watts room gurneys
+Create "Marker" "SargeRandomWattsRoomOutput2"
+{
+	+ObjProp "Position"
+	{
+		"Location" "12.9051, 110.403, -12.073"
+		"Heading" 3580
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomWattsRoomOutput2" "SargeMedSci1RandomInput" "Target"
+{
+}
+Create "Marker" "SargeRandomWattsRoomOutput3"
+{
+	+ObjProp "Position"
+	{
+		"Location" "43.0566, 106.801, -12.073"
+		"Heading" b3e0
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomWattsRoomOutput3" "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Table in R&D Room with power charger
+Create "Marker" "SargeRandomRandDPowerRoomDesk"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-26.0393, 110.423, -8.06447"
+		"Heading" e0be
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomRandDPowerRoomDesk" "SargeMedSci1RandomInput" "Target"
+{
+}
+//Table in R&D Room with power charger
+Create "Marker" "SargeRandomRandDPowerRoomDesk2"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-23.2229, 95.1905, -8.06447"
+		"Heading" 2590
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomRandDPowerRoomDesk2" "SargeMedSci1RandomInput" "Target"
+{
+}
+//Table in R&D Room with power charger
+Create "Marker" "SargeRandomRandDPowerRoomDesk3"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-30.1695, 52.4995, 0.515529"
+		"Heading" 1fc
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomRandDPowerRoomDesk3" "SargeMedSci1RandomInput" "Target"
+{
+}
+
+
+//Gurney in main R&D Hallway
+Create "Marker" "SargeRandomRandDHallway1"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-23.676, 45.1518, 0.115529"
+		"Heading" 844
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomRandDHallway1" "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Bench in small area with trashcan and observation window to Watts lab
+Create "Marker" "SargeRandomObservationRoom"
+{
+	+ObjProp "Position"
+	{
+		"Location" "36.5863, 45.1214, -13.0845"
+		"Heading" 4234
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomObservationRoom" "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Desk in trap room
+Create "Marker" "SargeRandomTrapRoomDesk"
+{
+	+ObjProp "Position"
+	{
+		"Location" "33.829, -59.5517, 0.115531"
+		"Heading" 2344
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomTrapRoomDesk" "SargeMedSci1RandomInput" "Target"
+{
+}
+//Desk in trap room
+Create "Marker" "SargeRandomTrapRoomDesk2"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-0.526425, -57.9892, 0.115531"
+		"Heading" 5aa4
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomTrapRoomDesk2" "SargeMedSci1RandomInput" "Target"
+{
+}
+//Trap room grating area
+Create "Marker" "SargeRandomTrapRoomGrating"
+{
+	+ObjProp "Position"
+	{
+		"Location" "7.85815, -39.3168, -1.68447"
+		"Heading" 218
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomTrapRoomGrating" "SargeMedSci1RandomInput" "Target"
+{
+}
+/*
+//Trap room floor area
+Create "Marker" "SargeRandomTrapRoomFloor"
+{
+	+ObjProp "Position"
+	{
+		"Location" "35.518, -29.8082, -3.0694"
+		"Heading" f858
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomTrapRoomFloor" "SargeMedSci1RandomInput" "Target"
+{
+}
+*/
+
+//Security Room closet desk
+Create "Marker" "SargeRandomSecurityRoomClosetDesk"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-35.9509, -168.484, -0.0694024"
+		"Heading" e478
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomSecurityRoomClosetDesk" "SargeMedSci1RandomInput" "Target"
+{
+}
+
+
+//Medical lobby desk
+Create "Marker" "SargeRandomMedicalLobbyDesk"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-54.7713, -195.792, 0.830598"
+		"Heading" de60
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomMedicalLobbyDesk" "SargeMedSci1RandomInput" "Target"
+{
+}
+Create "Marker" "SargeRandomMedicalLobbyDesk2"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-73.9693, -198.961, 0.830598"
+		"Heading" 3610
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomMedicalLobbyDesk2" "SargeMedSci1RandomInput" "Target"
+{
+}
+Create "Marker" "SargeRandomMedicalLobbyDesk3"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-67.5565, -194.652, 0.830598"
+		"Heading" a98
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomMedicalLobbyDesk3" "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Medical lobby nook above the desk
+Create "Marker" "SargeRandomMedicalLobbyDesk4"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-74.899, -208.508, 8.6306"
+		"Heading" a98
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomMedicalLobbyDesk4" "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Chair in the main Xerxes room
+Create "Marker" "SargeRandomXerxesChair"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-50.4874, -42.5113, -0.969402"
+		"Heading" b6c8
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomXerxesChair" "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Gurney in the Morgue
+Create "Marker" "SargeRandomMorgueGurney"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-83.5665, -111.267, -0.157899"
+		"Heading" fa5c
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomMorgueGurney" "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Computer Room near R&D
+Create "Marker" "SargeRandomComputerRoom"
+{
+	+ObjProp "Position"
+	{
+		"Location" "12.423, -5.5672, -2.93785"
+		"Heading" ea39
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomComputerRoom" "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//Chemical Storeroom
+Create "Marker" "SargeRandomChemicalStoreroom"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-34.6176, -43.9759, -0.537849"
+		"Heading" f270
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomChemicalStoreroom" "SargeMedSci1RandomInput" "Target"
+{
+}
+
+//On top of box in turret/recharger room
+Create "Marker" "SargeRandomTurretRoomBox"
+{
+	+ObjProp "Position"
+	{
+		"Location" "3.89734, 13.2885, -4.88342"
+		"Heading" f508
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomTurretRoomBox" "SargeMedSci1RandomInput" "Target"
+{
+}
+
+// ================================================================================
+// Science Sector Special Items
+// Note: We separate the "normal" loot from the "special" (2 hack crates) loot by using 2 separate loot manager object
+// ================================================================================
+
+//Special Randomiser
+//This is mainly used by Hack Crates so that their loot doesn't get mixed with the general level loot.
+Create "sargeRandomiserAreaHandler" "SargeMedSci1RandomInputSpecial"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-9.36382, -158.847, -0.85719"
+		"Heading" 0
+		"Pitch" 0
+		"Bank" 0
+	}
+	
+	+ObjProp "DesignNoteSS" = "fairDistribution=true;"
+}
+
+//A Hackable Crate
++Link 467 "SargeMedSci1RandomInputSpecial" "Target"
+{
+}
+
+//A Hackable Crate
++Link 471 "SargeMedSci1RandomInputSpecial" "Target"
+{
+}
+
+//A Hackable Crate
++Link 474 "SargeMedSci1RandomInputSpecial" "Target"
+{
+}
+
+//Behind the ramp turret
+Create "Marker" "SargeRandomRampTurret"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-46.2005, 31.9488, -3.1944"
+		"Heading" 570
+		"Pitch" 0
+		"Bank" 0
+	}
+}
++Link "SargeRandomRampTurret" "SargeMedSci1RandomInputSpecial" "Target"
+{
+}
+
+/*
+////Psi Pull Loot
+
+//Pullable Strength Booster in the Turret Nook area
++Link 478 "SargeMedSci1RandomInputSpecial" "Target"
+{
+}
+
+//Pullable Ammo in the Turret Nook area
++Link 2008 "SargeMedSci1RandomInputSpecial" "Target"
+{
+}
+
+//Create a marker to allow small things to spawn above the turret ramp
+Create "Marker" "SargeTurretNookInput"
+{
+	+ObjProp "Position"
+	{
+		"Location" "-40.92, -5.91, 4.41683"
+		"Heading" 3012
+		"Pitch" e08a
+		"Bank" e86b
+	}
+}
++MetaProp "SargeTurretNookInput" "Object Randomiser - Only Hypos And Ammo"
++Link "SargeTurretNookInput" "SargeMedSci1RandomInputSpecial" "Target"
+{
+}
+*/
